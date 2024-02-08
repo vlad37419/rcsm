@@ -1,3 +1,14 @@
+function initPhoneMask() {
+    const phoneFields = document.querySelectorAll('input[type="tel"]');
+    const maskOptions = {
+        mask: '+{7} (000) 000 00-00'
+    };
+
+    phoneFields.forEach((phoneField) => {
+        IMask(phoneField, maskOptions);
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     // promotions sliders
     const promotionsSlidersList = document.querySelectorAll('.promotions__slider');
@@ -6,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function () {
         promotionsSlidersList.forEach((slider) => {
             const promotionsSlider = new Swiper(slider, {
                 navigation: {
-                    nextEl: '.promotions__slider-btn_next',
-                    prevEl: '.promotions__slider-btn_prev',
+                    prevEl: slider.closest('.slider-wrapper').querySelector('.slider-btn_prev'),
+                    nextEl: slider.closest('.slider-wrapper').querySelector('.slider-btn_next'),
                 },
                 effect: 'fade',
                 fadeEffect: {
@@ -18,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // service slider
     const serviceSlidersList = document.querySelectorAll('.service__slider');
 
     if (serviceSlidersList.length > 0) {
@@ -44,6 +56,25 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // reviews sliders
+    const reviewsSlidersList = document.querySelectorAll('.reviews__slider');
+
+    if (reviewsSlidersList.length > 0) {
+        reviewsSlidersList.forEach((slider) => {
+            const reviewsSlider = new Swiper(slider, {
+                navigation: {
+                    prevEl: slider.closest('.slider-wrapper').querySelector('.slider-btn_prev'),
+                    nextEl: slider.closest('.slider-wrapper').querySelector('.slider-btn_next'),
+                },
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                loop: true,
+            });
+        });
+    }
+
     // header fixed
     const header = document.querySelector('.header');
 
@@ -59,5 +90,149 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             header.classList.remove('fixed');
         }
+    });
+
+    // accordion
+    const ACCORDION_LIST = 'data-accordion-list'
+    const ACCORDION_BUTTON = 'data-accordion-button'
+    const ACCORDION_ARROW = 'data-accordion-arrow'
+    const ACCORDION_CONTENT = 'data-accordion-content'
+    const SECTION_OPENED = 'active'
+    const ICON_ROTATED = 'rotated'
+
+    class Accordion {
+        static apply(accordionNode) {
+            if (!accordionNode) {
+                return
+            }
+
+            const acc = new Accordion()
+            acc.accordion = accordionNode
+            accordionNode.onclick = acc.onClick.bind(acc)
+        }
+
+        handleClick(button) {
+            const innerSection = button.closest('.accor').querySelector('.accor-full');
+            const isOpened = innerSection.classList.contains(SECTION_OPENED)
+
+            if (isOpened) {
+                this.close(innerSection)
+                return
+            }
+            this.open(innerSection)
+        }
+
+        open(section) {
+            const accordion = section.querySelector(`[${ACCORDION_CONTENT}`).closest('.accor');
+            const accordionContent = section.querySelector(`[${ACCORDION_CONTENT}`)
+            const accordionList = accordionContent.querySelector(`[${ACCORDION_LIST}`)
+            const innerSectionHeight = accordionContent.clientHeight
+            let countOfScrollHeight = 0;
+            const allElementContentData = section.querySelectorAll(`[${ACCORDION_CONTENT}`)
+            accordion.classList.add(SECTION_OPENED)
+            section.classList.add(SECTION_OPENED)
+            this.rotateIconFor(section.previousElementSibling)
+
+            for (const item of allElementContentData) {
+                countOfScrollHeight = countOfScrollHeight + item.scrollHeight;
+            }
+
+            if (accordionContent.contains(accordionList)) {
+                section.style.maxHeight = `${innerSectionHeight + countOfScrollHeight}px`
+                return
+            }
+            section.style.maxHeight = `${innerSectionHeight}px`
+        }
+
+        close(section) {
+            const accordion = section.querySelector(`[${ACCORDION_CONTENT}`).closest('.accor');
+            section.style.maxHeight = 0
+            accordion.classList.remove(SECTION_OPENED)
+            section.classList.remove(SECTION_OPENED)
+            this.rotateIconFor(section.previousElementSibling)
+        }
+
+        rotateIconFor(button) {
+            const rotatedIconClass = ICON_ROTATED
+            const arrowElement = button.dataset.hasOwnProperty('accordionArrow') ?
+                button :
+                button.querySelector(`[${ACCORDION_ARROW}]`)
+
+            if (!arrowElement) {
+                return
+            }
+
+            const isOpened = arrowElement.classList.contains(rotatedIconClass)
+            if (!isOpened) {
+                arrowElement.classList.add(rotatedIconClass)
+                return
+            }
+            arrowElement.classList.remove(rotatedIconClass)
+        }
+
+        onClick(event) {
+            let button = event.target.closest(`[${ACCORDION_BUTTON}]`)
+            if (button && button.dataset.accordionButton !== undefined) {
+                this.handleClick(button)
+            }
+            setTimeout(() => {
+                AOS.refresh();
+            }, 500);
+        }
+    }
+
+    const accorWrapperList = document.querySelectorAll('.accor-wrapper');
+
+    if (accorWrapperList.length > 0) {
+        accorWrapperList.forEach(function (elem) {
+            Accordion.apply(elem);
+        });
+    }
+
+    window.addEventListener('scroll', function (e) {
+        let scrollDistance = window.scrollY;
+
+        if (window.innerWidth > 768) {
+            document.querySelectorAll('.scroll-to-block_js').forEach((el, i) => {
+                if (el.offsetTop - 60 <= scrollDistance) {
+                    document.querySelectorAll('a[href^="#"]').forEach((el) => {
+                        if (el.classList.contains('active')) {
+                            el.classList.remove('active');
+                        }
+                    }
+                    );
+
+                    document.querySelectorAll('.side-menu .side-menu__item')[i].querySelector('a[href^="#"]').classList.add('active');
+                }
+            }
+            );
+        }
+    });
+
+    // Scroll to block
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            let href = this.getAttribute('href').substring(1);
+
+            const scrollTarget = document.getElementById(href);
+            const topOffset = 120;
+            const elementPosition = scrollTarget.getBoundingClientRect().top;
+            const offsetPosition = elementPosition - topOffset;
+
+            window.scrollBy({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    initPhoneMask();
+    AOS.init({
+        once: true,
+    });
+    document.querySelectorAll('.select').forEach((item) => {
+        new Choices(item, {});
     });
 });

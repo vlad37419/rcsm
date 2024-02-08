@@ -10,10 +10,15 @@
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/build/swiper.css">
     <link rel="stylesheet" href="assets/css/build/fancybox.css">
+    <link rel="stylesheet" href="assets/css/build/choices.css">
+    <link rel="stylesheet" href="assets/css/build/aos.css">
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <script defer src="assets/js/build/swiper.js"></script>
     <script defer src="assets/js/build/fancybox.js"></script>
+    <script defer src="assets/js/build/mask.js"></script>
+    <script defer src="assets/js/build/choices.js"></script>
+    <script defer src="assets/js/build/aos.js"></script>
     <script defer src="assets/js/main.js"></script>
     <title>Главная</title>
 </head>
@@ -32,11 +37,11 @@
                 </div>
                 <nav class="header__menu menu">
                     <ul class="menu__list">
-                        <li class="menu__item"><a href="#" class="menu__link">Как мы работаем</a></li>
-                        <li class="menu__item"><a href="#" class="menu__link">Услуги</a></li>
-                        <li class="menu__item"><a href="#" class="menu__link">Гарантии</a></li>
-                        <li class="menu__item"><a href="#" class="menu__link">О компании</a></li>
-                        <li class="menu__item"><a href="#" class="menu__link">Вопросы</a></li>
+                        <li class="menu__item"><a href="#steps" class="menu__link">Как мы работаем</a></li>
+                        <li class="menu__item"><a href="#services" class="menu__link">Услуги</a></li>
+                        <li class="menu__item"><a href="#guarantees" class="menu__link">Гарантии</a></li>
+                        <li class="menu__item"><a href="#about" class="menu__link">О компании</a></li>
+                        <li class="menu__item"><a href="#faq" class="menu__link">Вопросы</a></li>
                     </ul>
                 </nav>
                 <div class="header__connection connection">
@@ -62,7 +67,7 @@
         </div>
     </header>
     <main class="main">
-        <section class="promo">
+        <section class="promo" data-aos="fade-up" data-aos-duration="600">
             <div class="block-decor block-decor_left"></div>
             <div class="block-decor block-decor_right"></div>
             <div class="promo__wrapper">
@@ -73,28 +78,28 @@
                     <div class="promo__row">
                         <div class="promo__content">
                             <div class="promo__stickers stickers">
-                                <div class="stickers__item sticker">
+                                <div class="stickers__item sticker" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600">
                                     <img src="assets/img/icons/stickers/1.svg" alt="" class="sticker__icon"
                                         aria-label="presentation">
                                     <p class="sticker__text">
                                         Быстро
                                     </p>
                                 </div>
-                                <div class="stickers__item sticker">
+                                <div class="stickers__item sticker" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="650">
                                     <img src="assets/img/icons/stickers/2.svg" alt="" class="sticker__icon"
                                         aria-label="presentation">
                                     <p class="sticker__text">
                                         Качественно
                                     </p>
                                 </div>
-                                <div class="stickers__item sticker">
+                                <div class="stickers__item sticker" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="700">
                                     <img src="assets/img/icons/stickers/3.svg" alt="" class="sticker__icon"
                                         aria-label="presentation">
                                     <p class="sticker__text">
                                         Официально
                                     </p>
                                 </div>
-                                <div class="stickers__item sticker">
+                                <div class="stickers__item sticker" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="750">
                                     <img src="assets/img/icons/stickers/4.svg" alt="" class="sticker__icon"
                                         aria-label="presentation">
                                     <p class="sticker__text">
@@ -102,10 +107,10 @@
                                     </p>
                                 </div>
                             </div>
-                            <h1 class="promo__title page-title">
+                            <h1 class="promo__title page-title" data-aos="fade-right" data-aos-duration="600" data-aos-delay="600">
                                 Поверка счетчиков воды без снятия от ХХХ руб в Краснодаре
                             </h1>
-                            <ul class="promo__list">
+                            <ul class="promo__list" data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
                                 <li class="promo__item">
                                     <img src="assets/img/sections/promo/1.svg" alt="" class="promo__item-icon"
                                         aria-label="presentation">
@@ -129,7 +134,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="promo__check check">
+                        <div class="promo__check check" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600">
                             <p class="check__title">
                                 Доверяйте только аккредитованным компаниям!
                             </p>
@@ -152,17 +157,19 @@
                 </div>
             </div>
         </section>
-        <section class="advantages">
+        <section class="advantages" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
             <div class="advantages__container container">
                 <div class="advantages__wrapper main-container">
-                    <h2 class="advantages__title section-title">
-                        Что значит “поверка счетчика воды без снятия”
-                    </h2>
+                    <div class="advantages__top section-top">
+                        <h2 class="advantages__title section-title">
+                            Что значит “поверка счетчика воды без снятия”
+                        </h2>
+                    </div>
                     <p class="advantages__descr section-descr">
                         Это выгодная и удобная услуга, проводится по методике ХХХХХХХХ, экономит ваше время и нервы.
                     </p>
                     <div class="advantages__row grid-3-36-48">
-                        <div class="advantages__item advantage decor-item">
+                        <div class="advantages__item advantage decor-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
                             <picture class="advantage__picture">
                                 <img src="assets/img/sections/advantages/1.png" alt="" class="advantage__img">
                             </picture>
@@ -173,7 +180,7 @@
                                 Счетчик воды поверяется на дому согласно методике ХХХХХХХХХ, без снятия, без демонтажа
                             </p>
                         </div>
-                        <div class="advantages__item advantage decor-item">
+                        <div class="advantages__item advantage decor-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="250">
                             <picture class="advantage__picture">
                                 <img src="assets/img/sections/advantages/2.png" alt="" class="advantage__img">
                             </picture>
@@ -185,7 +192,7 @@
                                 остаются нетронутыми
                             </p>
                         </div>
-                        <div class="advantages__item advantage decor-item">
+                        <div class="advantages__item advantage decor-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300">
                             <picture class="advantage__picture">
                                 <img src="assets/img/sections/advantages/3.png" alt="" class="advantage__img">
                             </picture>
@@ -211,7 +218,7 @@
                 </div>
             </div>
         </section>
-        <section class="promotions">
+        <section class="promotions" data-aos="fade-up" data-aos-duration="600">
             <div class="promotions__container container">
                 <div class="promotions__wrapper main-container">
                     <div class="promotions__slider-container slider-wrapper">
@@ -301,14 +308,16 @@
                 </div>
             </div>
         </section>
-        <section class="steps">
+        <section id="steps" class="steps scroll-to-block_js" data-aos="fade-up" data-aos-duration="600">
             <div class="steps__container container">
                 <div class="steps__wrapper main-container">
-                    <h2 class="steps__title section-title">
-                        Этапы работы
-                    </h2>
+                    <div class="steps__top section-top section-top_mb-40">
+                        <h2 class="steps__title section-title">
+                            Этапы работы
+                        </h2>
+                    </div>
                     <div class="steps__row grid-4-48-48">
-                        <div class="steps__item step decor-item">
+                        <div class="steps__item step decor-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
                             <p class="step__num">
                                 1
                             </p>
@@ -319,7 +328,7 @@
                                 Оставьте заявку для проведения поверки счетчиков воды в удобное для Вас время
                             </p>
                         </div>
-                        <div class="steps__item step decor-item">
+                        <div class="steps__item step decor-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
                             <p class="step__num">
                                 2
                             </p>
@@ -330,7 +339,7 @@
                                 Метролог с сертифицированным оборудованием приедет в назначенное время
                             </p>
                         </div>
-                        <div class="steps__item step decor-item">
+                        <div class="steps__item step decor-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
                             <p class="step__num">
                                 3
                             </p>
@@ -341,7 +350,7 @@
                                 Проведем поверку приборов учета воды согласно методики ХХХХХХХХХ
                             </p>
                         </div>
-                        <div class="steps__item step decor-item">
+                        <div class="steps__item step decor-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="250">
                             <p class="step__num">
                                 4
                             </p>
@@ -355,7 +364,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="steps__video-wrapper">
+                <div class="steps__video-wrapper" data-aos="fade-up" data-aos-duration="600">
                     <iframe class="steps__video" src="https://www.youtube.com/embed/XbGs_qK2PQA?si=Kl8gkmHQQ0AtrenC"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -363,8 +372,8 @@
                 </div>
             </div>
         </section>
-        <section class="services section-offset">
-            <div class="services__preview">
+        <section id="services" class="services section-offset scroll-to-block_js">
+            <div class="services__preview" data-aos="fade-up" data-aos-duration="600">
                 <div class="block-decor block-decor_left"></div>
                 <div class="block-decor block-decor_right"></div>
                 <div class="services__preview-wrapper">
@@ -384,7 +393,7 @@
                 </div>
             </div>
             <div class="services__container container-1280">
-                <div class="services__item service">
+                <div class="services__item service" data-aos="fade-up" data-aos-duration="600">
                     <div class="service__content">
                         <p class="service__title">
                             Поверка счетчика воды
@@ -669,7 +678,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="services__item service">
+                <div class="services__item service" data-aos="fade-up" data-aos-duration="600">
                     <div class="service__content">
                         <p class="service__title">
                             Поверка счетчика воды
@@ -954,7 +963,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="services__item service">
+                <div class="services__item service" data-aos="fade-up" data-aos-duration="600">
                     <div class="service__content">
                         <p class="service__title">
                             Поверка счетчика воды
@@ -1241,13 +1250,15 @@
                 </div>
             </div>
         </section>
-        <section class="guarantees section-offset">
+        <section id="guarantees" class="guarantees section-offset scroll-to-block_js">
             <div class="guarantees__container container-1280">
-                <h2 class="advantages__title section-title section-title_mb-40">
-                    Вам мы гарантируем
-                </h2>
+                <div class="guarantees__top section-top section-top_mb-40">
+                    <h2 class="advantages__title section-title">
+                        Вам мы гарантируем
+                    </h2>
+                </div>
                 <div class="guarantees__wrapper grid-3-16-48">
-                    <div class="guarantees__item guarant decor-item">
+                    <div class="guarantees__item guarant decor-item" data-aos="zoom-in" data-aos-duration="600">
                         <span class="guarant__icon">
                             <svg width="80" height="80" viewBox="0 0 80 80" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -1261,7 +1272,7 @@
                             Приезд метролога в назначенное время
                         </p>
                     </div>
-                    <div class="guarantees__item guarant decor-item">
+                    <div class="guarantees__item guarant decor-item" data-aos="zoom-in" data-aos-duration="600">
                         <span class="guarant__icon">
                             <svg width="80" height="80" viewBox="0 0 80 80" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -1275,7 +1286,7 @@
                             Внесение данных о поверке в гос.реестр ФГИС “АРШИН”
                         </p>
                     </div>
-                    <div class="guarantees__item guarant decor-item">
+                    <div class="guarantees__item guarant decor-item" data-aos="zoom-in" data-aos-duration="600">
                         <span class="guarant__icon">
                             <svg width="80" height="80" viewBox="0 0 80 80" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -1289,7 +1300,7 @@
                             Взаимную вежливость и аккуратность при проведении работ
                         </p>
                     </div>
-                    <div class="guarantees__item guarant decor-item">
+                    <div class="guarantees__item guarant decor-item" data-aos="zoom-in" data-aos-duration="600">
                         <span class="guarant__icon">
                             <svg width="80" height="80" viewBox="0 0 80 80" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -1303,7 +1314,7 @@
                             Полный комплект документов для ТСЖ и УК
                         </p>
                     </div>
-                    <div class="guarantees__item guarant decor-item">
+                    <div class="guarantees__item guarant decor-item" data-aos="zoom-in" data-aos-duration="600">
                         <span class="guarant__icon">
                             <svg width="80" height="80" viewBox="0 0 80 80" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -1317,7 +1328,7 @@
                             Отсутствие навязанных услуг
                         </p>
                     </div>
-                    <div class="guarantees__item guarant decor-item">
+                    <div class="guarantees__item guarant decor-item" data-aos="zoom-in" data-aos-duration="600">
                         <span class="guarant__icon">
                             <svg width="80" height="80" viewBox="0 0 80 80" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -1334,7 +1345,1068 @@
                 </div>
             </div>
         </section>
+        <section class="reviews section-offset" data-aos="fade-up" data-aos-duration="600">
+            <div class="reviews__container container-1280">
+                <div class="reviews__top section-top">
+                    <h2 class="reviews__title section-title">
+                        Отзывы об услугах
+                    </h2>
+                    <button class="reviews__btn">
+                        ОСТАВИТЬ ОТЗЫВ
+                    </button>
+                </div>
+                <div class="reviews__wrapper slider-wrapper">
+                    <div class="reviews__slider swiper">
+                        <div class="reviews__slider-wrapper swiper-wrapper">
+                            <div class="reviews__slide review swiper-slide">
+                                <div class="review__user">
+                                    <picture class="review__user-picture">
+                                        <img src="assets/img/icons/review-default.png" alt="" class="review__user-img">
+                                    </picture>
+                                    <div class="review__user-info">
+                                        <p class="review__user-name">
+                                            Василий Г.
+                                        </p>
+                                        <p class="review__user-city">
+                                            Краснодар
+                                        </p>
+                                        <p class="review__user-date">
+                                            15.02.2023 15:22
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="review__content content-body">
+                                    <p>
+                                        Ой все так хорошо, что даже добавить нечего. Мастер пришел, все там подключил, в
+                                        телефон данные заполнил, вернул все на место и выдал свидетельство.
+                                        Ой все так хорошо, что даже добавить нечего. Мастер пришел, все там подключил, в
+                                        телефон данные заполнил, вернул все на место и выдал свидетельство.
+                                        Ой все так хорошо, что даже добавить нечего. Мастер пришел, все там подключил, в
+                                        телефон данные заполнил, вернул все на место и выдал свидетельство.
+                                        Ой все так хорошо, что даже добавить нечего. Мастер пришел, все там подключил, в
+                                        телефон данные заполнил, вернул все на место и выдал свидетельство.
+                                        Ой все так хорошо, что даже добавить нечего. Мастер пришел, все там подключил, в
+                                        телефон данные заполнил, вернул все на место и выдал свидетельство.
+                                    </p>
+                                </div>
+                                <div class="review__gallery">
+                                    <p class="review__gallery-title review__sub-title">
+                                        Фото прикрепленные к отзыву:
+                                    </p>
+                                    <div class="review__gallery-images">
+                                        <a href="assets/img/sections/reviews/1.png" data-fancybox="review-gallery-1"
+                                            class="review__gallery-link">
+                                            <img src="assets/img/sections/reviews/1.png" alt=""
+                                                class="review__gallery-img">
+                                        </a>
+                                        <a href="assets/img/sections/reviews/1.png" data-fancybox="review-gallery-1"
+                                            class="review__gallery-link">
+                                            <img src="assets/img/sections/reviews/1.png" alt=""
+                                                class="review__gallery-img">
+                                        </a>
+                                        <a href="assets/img/sections/reviews/1.png" data-fancybox="review-gallery-1"
+                                            class="review__gallery-link">
+                                            <img src="assets/img/sections/reviews/1.png" alt=""
+                                                class="review__gallery-img">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="review__answer">
+                                    <p class="review__answer-title review__sub-title">
+                                        Ответ администрации:
+                                    </p>
+                                    <p class="review__answer-text">
+                                        Добрый день, Василий, благодарим за отзыв, постараемся и дальше держать марку!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="reviews__slide review swiper-slide">
+                                <div class="review__user">
+                                    <picture class="review__user-picture">
+                                        <img src="assets/img/icons/review-default.png" alt="" class="review__user-img">
+                                    </picture>
+                                    <div class="review__user-info">
+                                        <p class="review__user-name">
+                                            Василий Г.
+                                        </p>
+                                        <p class="review__user-city">
+                                            Краснодар
+                                        </p>
+                                        <p class="review__user-date">
+                                            15.02.2023 15:22
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="review__content content-body">
+                                    <p>
+                                        Ой все так хорошо, что даже добавить нечего. Мастер пришел, все там подключил, в
+                                        телефон данные заполнил, вернул все на место и выдал свидетельство.
+                                    </p>
+                                </div>
+                                <div class="review__gallery">
+                                    <p class="review__gallery-title review__sub-title">
+                                        Фото прикрепленные к отзыву:
+                                    </p>
+                                    <div class="review__gallery-images">
+                                        <a href="assets/img/sections/reviews/1.png" data-fancybox="review-gallery-2"
+                                            class="review__gallery-link">
+                                            <img src="assets/img/sections/reviews/1.png" alt=""
+                                                class="review__gallery-img">
+                                        </a>
+                                        <a href="assets/img/sections/reviews/1.png" data-fancybox="review-gallery-2"
+                                            class="review__gallery-link">
+                                            <img src="assets/img/sections/reviews/1.png" alt=""
+                                                class="review__gallery-img">
+                                        </a>
+                                        <a href="assets/img/sections/reviews/1.png" data-fancybox="review-gallery-2"
+                                            class="review__gallery-link">
+                                            <img src="assets/img/sections/reviews/1.png" alt=""
+                                                class="review__gallery-img">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="review__answer">
+                                    <p class="review__answer-title review__sub-title">
+                                        Ответ администрации:
+                                    </p>
+                                    <p class="review__answer-text">
+                                        Добрый день, Василий, благодарим за отзыв, постараемся и дальше держать марку!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="reviews__slide review swiper-slide">
+                                <div class="review__user">
+                                    <picture class="review__user-picture">
+                                        <img src="assets/img/icons/review-default.png" alt="" class="review__user-img">
+                                    </picture>
+                                    <div class="review__user-info">
+                                        <p class="review__user-name">
+                                            Василий Г.
+                                        </p>
+                                        <p class="review__user-city">
+                                            Краснодар
+                                        </p>
+                                        <p class="review__user-date">
+                                            15.02.2023 15:22
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="review__content content-body">
+                                    <p>
+                                        Ой все так хорошо, что даже добавить нечего. Мастер пришел, все там подключил, в
+                                        телефон данные заполнил, вернул все на место и выдал свидетельство.
+                                        Ой все так хорошо, что даже добавить нечего. Мастер пришел, все там подключил, в
+                                        телефон данные заполнил, вернул все на место и выдал свидетельство.
+                                        Ой все так хорошо, что даже добавить нечего. Мастер пришел, все там подключил, в
+                                        телефон данные заполнил, вернул все на место и выдал свидетельство.
+                                    </p>
+                                </div>
+                                <div class="review__gallery">
+                                    <p class="review__gallery-title review__sub-title">
+                                        Фото прикрепленные к отзыву:
+                                    </p>
+                                    <div class="review__gallery-images">
+                                        <a href="assets/img/sections/reviews/1.png" data-fancybox="review-gallery-3"
+                                            class="review__gallery-link">
+                                            <img src="assets/img/sections/reviews/1.png" alt=""
+                                                class="review__gallery-img">
+                                        </a>
+                                        <a href="assets/img/sections/reviews/1.png" data-fancybox="review-gallery-3"
+                                            class="review__gallery-link">
+                                            <img src="assets/img/sections/reviews/1.png" alt=""
+                                                class="review__gallery-img">
+                                        </a>
+                                        <a href="assets/img/sections/reviews/1.png" data-fancybox="review-gallery-3"
+                                            class="review__gallery-link">
+                                            <img src="assets/img/sections/reviews/1.png" alt=""
+                                                class="review__gallery-img">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="review__answer">
+                                    <p class="review__answer-title review__sub-title">
+                                        Ответ администрации:
+                                    </p>
+                                    <p class="review__answer-text">
+                                        Добрый день, Василий, благодарим за отзыв, постараемся и дальше держать марку!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="promotions__slider-btn promotions__slider-btn_prev slider-btn slider-btn_prev">
+                        <svg width="32" height="24" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_206_771)">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M36 12C36 12.2652 35.8989 12.5195 35.7188 12.707C35.5388 12.8945 35.2947 12.9999 35.0401 12.9999L7.27894 12.9999L13.3208 19.291C13.501 19.4787 13.6023 19.7334 13.6023 19.9989C13.6023 20.2644 13.501 20.519 13.3208 20.7068C13.1405 20.8945 12.8961 21 12.6411 21C12.3862 21 12.1418 20.8945 11.9615 20.7068L4.28202 12.7079C4.19262 12.615 4.1217 12.5047 4.0733 12.3832C4.02491 12.2617 4 12.1315 4 12C4 11.8685 4.02491 11.7383 4.0733 11.6168C4.1217 11.4953 4.19262 11.385 4.28202 11.2921L11.9615 3.29322C12.1418 3.10548 12.3862 3 12.6411 3C12.8961 3 13.1405 3.10548 13.3208 3.29322C13.501 3.48097 13.6023 3.73561 13.6023 4.00112C13.6023 4.26664 13.501 4.52128 13.3208 4.70902L7.27894 11.0001L35.0401 11.0001C35.2947 11.0001 35.5388 11.1055 35.7188 11.293C35.8989 11.4805 36 11.7348 36 12Z"
+                                    fill="#373737" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_206_771">
+                                    <rect width="32" height="24" fill="white" transform="matrix(1 0 0 -1 0 24)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </button>
+                    <button class="promotions__slider-btn promotions__slider-btn_next slider-btn slider-btn_next">
+                        <svg width="32" height="24" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_206_794)">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M-4 12C-4 12.2652 -3.89887 12.5195 -3.71884 12.707C-3.53882 12.8945 -3.29466 12.9999 -3.04006 12.9999L24.7211 12.9999L18.6792 19.291C18.499 19.4787 18.3977 19.7334 18.3977 19.9989C18.3977 20.2644 18.499 20.519 18.6792 20.7068C18.8595 20.8945 19.1039 21 19.3589 21C19.6138 21 19.8582 20.8945 20.0385 20.7068L27.718 12.7079C27.8074 12.615 27.8783 12.5047 27.9267 12.3832C27.9751 12.2617 28 12.1315 28 12C28 11.8685 27.9751 11.7383 27.9267 11.6168C27.8783 11.4953 27.8074 11.385 27.718 11.2921L20.0385 3.29322C19.8582 3.10548 19.6138 3 19.3589 3C19.1039 3 18.8595 3.10548 18.6792 3.29322C18.499 3.48097 18.3977 3.73561 18.3977 4.00112C18.3977 4.26664 18.499 4.52128 18.6792 4.70902L24.7211 11.0001L-3.04006 11.0001C-3.29466 11.0001 -3.53882 11.1055 -3.71884 11.293C-3.89887 11.4805 -4 11.7348 -4 12Z"
+                                    fill="#373737" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_206_794">
+                                    <rect width="32" height="24" fill="white" transform="matrix(1 0 0 -1 0 24)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class="guarantees section-offset">
+            <div class="guarantees__container container-1280">
+                <div class="guarantees__top section-top section-top_mb-40">
+                    <h2 class="advantages__title section-title">
+                        Работаем с различными клиентами
+                    </h2>
+                </div>
+                <div class="guarantees__wrapper grid-3-16-48">
+                    <div class="guarantees__item guarant decor-item" data-aos="zoom-in" data-aos-duration="600">
+                        <span class="guarant__icon">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="80" height="80" fill="white" />
+                                <path
+                                    d="M40.9248 20.3175C40.6567 20.1117 40.3264 20 39.9864 20C39.6464 20 39.3161 20.1117 39.048 20.3175L20 36.9817L21.8783 39.3196L24.5333 37.2821V57.0256C24.5349 57.814 24.8539 58.5696 25.4203 59.1271C25.9867 59.6846 26.7545 59.9984 27.5556 60H52.4444C53.2455 59.9984 54.0133 59.6846 54.5797 59.1271C55.1461 58.5696 55.4651 57.814 55.4667 57.0256V37.2955L58.1217 39.3329L60 36.995L40.9248 20.3175ZM43.0222 57.0256H36.9778V45.1279H43.0222V57.0256ZM46.0444 57.0256V45.1279C46.0436 44.3393 45.725 43.5832 45.1584 43.0255C44.5918 42.4679 43.8235 42.1543 43.0222 42.1535H36.9778C36.1765 42.1543 35.4082 42.4679 34.8416 43.0255C34.275 43.5832 33.9564 44.3393 33.9556 45.1279V57.0256H27.5556V34.9635L40 23.3782L52.4444 34.9784V57.0256H46.0444Z"
+                                    fill="#21A1CA" />
+                            </svg>
+                        </span>
+                        <p class="guarant__text">
+                            С физическими лицами (людьми, желающими поверить счетчик без проблем)
+                        </p>
+                    </div>
+                    <div class="guarantees__item guarant decor-item" data-aos="zoom-in" data-aos-duration="600">
+                        <span class="guarant__icon">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="80" height="80" fill="white" />
+                                <path
+                                    d="M40.9248 20.3175C40.6567 20.1117 40.3264 20 39.9864 20C39.6464 20 39.3161 20.1117 39.048 20.3175L20 36.9817L21.8783 39.3196L24.5333 37.2821V57.0256C24.5349 57.814 24.8539 58.5696 25.4203 59.1271C25.9867 59.6846 26.7545 59.9984 27.5556 60H52.4444C53.2455 59.9984 54.0133 59.6846 54.5797 59.1271C55.1461 58.5696 55.4651 57.814 55.4667 57.0256V37.2955L58.1217 39.3329L60 36.995L40.9248 20.3175ZM43.0222 57.0256H36.9778V45.1279H43.0222V57.0256ZM46.0444 57.0256V45.1279C46.0436 44.3393 45.725 43.5832 45.1584 43.0255C44.5918 42.4679 43.8235 42.1543 43.0222 42.1535H36.9778C36.1765 42.1543 35.4082 42.4679 34.8416 43.0255C34.275 43.5832 33.9564 44.3393 33.9556 45.1279V57.0256H27.5556V34.9635L40 23.3782L52.4444 34.9784V57.0256H46.0444Z"
+                                    fill="#21A1CA" />
+                            </svg>
+                        </span>
+                        <p class="guarant__text">
+                            С юридическими лицами (компаниями и предпринимателями)
+                        </p>
+                    </div>
+                    <div class="guarantees__item guarant decor-item" data-aos="zoom-in" data-aos-duration="600">
+                        <span class="guarant__icon">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="80" height="80" fill="white" />
+                                <path
+                                    d="M40.9248 20.3175C40.6567 20.1117 40.3264 20 39.9864 20C39.6464 20 39.3161 20.1117 39.048 20.3175L20 36.9817L21.8783 39.3196L24.5333 37.2821V57.0256C24.5349 57.814 24.8539 58.5696 25.4203 59.1271C25.9867 59.6846 26.7545 59.9984 27.5556 60H52.4444C53.2455 59.9984 54.0133 59.6846 54.5797 59.1271C55.1461 58.5696 55.4651 57.814 55.4667 57.0256V37.2955L58.1217 39.3329L60 36.995L40.9248 20.3175ZM43.0222 57.0256H36.9778V45.1279H43.0222V57.0256ZM46.0444 57.0256V45.1279C46.0436 44.3393 45.725 43.5832 45.1584 43.0255C44.5918 42.4679 43.8235 42.1543 43.0222 42.1535H36.9778C36.1765 42.1543 35.4082 42.4679 34.8416 43.0255C34.275 43.5832 33.9564 44.3393 33.9556 45.1279V57.0256H27.5556V34.9635L40 23.3782L52.4444 34.9784V57.0256H46.0444Z"
+                                    fill="#21A1CA" />
+                            </svg>
+                        </span>
+                        <p class="guarant__text">
+                            С ТСЖ и Управляющими Компаниями
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="callback section-offset" data-aos="fade-up" data-aos-duration="600">
+            <div class="callback__container container-1280">
+                <div class="callback__wrapper">
+                    <div class="callback__content">
+                        <h2 class="callback__title">
+                            Оставьте заявку на качественную поверку счетчика воды
+                        </h2>
+                        <p class="callback__descr">
+                            Мы перезвоним вам, проконсультируем по всем фопросам и запишем вас на нужную услугу в
+                            удобное для вас время
+                        </p>
+                        <picture class="callback__picture">
+                            <img src="assets/img/sections/callback/preview.png" alt="" class="callback__img">
+                        </picture>
+                    </div>
+                    <form method="post" class="callback__form form">
+                        <div class="form-select-data">
+                            <select name="city" class="form-select select">
+                                <option value="Краснодар">Краснодар</option>
+                                <option value="Москва">Москва</option>
+                                <option value="Ростов-на-Дону">Ростов-на-Дону</option>
+                            </select>
+                            <div class="data-select">
+                                <div class="data-select__item">
+                                    <div class="data-select__preview">
+                                        <img src="assets/img/icons/person.svg" alt="" class="data-select__preview-icon">
+                                        <p class="data-select__preview-text">
+                                            Ответственный в вашем городе:
+                                        </p>
+                                    </div>
+                                    <p class="data-select__text">
+                                        Владимир О.В.
+                                    </p>
+                                </div>
+                                <div class="data-select__item">
+                                    <div class="data-select__preview">
+                                        <img src="assets/img/icons/phone.svg" alt="" class="data-select__preview-icon">
+                                        <p class="data-select__preview-text">
+                                            Контактный телефон:
+                                        </p>
+                                    </div>
+                                    <a href="tel:89186593343" class="data-select__text data-select__text_decor">
+                                        8 918 659 33 43
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <p class="form-field__title">
+                                Ваше имя:
+                            </p>
+                            <input type="text" name="name" placeholder="Введите имя" class="form-field__input">
+                        </div>
+                        <div class="form-field">
+                            <p class="form-field__title">
+                                Ваш номер телефона:
+                            </p>
+                            <input type="tel" name="name" placeholder="+7 (___) ___ - __ - __"
+                                class="form-field__input">
+                        </div>
+                        <label class="callback__checkbox checkbox">
+                            <input type="checkbox" class="checkbox__input visually-hidden">
+                            <span class="checkbox__inner">
+                                <svg width="10.990234" height="8.499268" viewBox="0 0 10.9902 8.49927" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <desc>
+                                        Created with Pixso.
+                                    </desc>
+                                    <defs />
+                                    <path id="Vector"
+                                        d="M10.7285 0.179443C10.8047 0.243652 10.8652 0.321777 10.9102 0.409668C10.9551 0.497559 10.9824 0.593506 10.9883 0.69165C10.9961 0.789795 10.9844 0.888672 10.9531 0.982422C10.9238 1.07593 10.875 1.1626 10.8105 1.23755L4.81055 8.23755C4.74219 8.31592 4.66016 8.37964 4.56641 8.42456C4.47461 8.46948 4.37305 8.49487 4.26953 8.49878C4.16602 8.50269 4.0625 8.48535 3.9668 8.44751C3.87109 8.40991 3.7832 8.35254 3.71094 8.27954L0.210938 4.77954C0.0742188 4.63794 -0.00195312 4.44849 0 4.25171C0.00195312 4.05518 0.0800781 3.86719 0.220703 3.72803C0.359375 3.58911 0.546875 3.51025 0.744141 3.50879C0.941406 3.50708 1.13086 3.58276 1.27148 3.71948L4.19922 6.64648L9.67188 0.261475C9.80273 0.110596 9.98633 0.017334 10.1836 0.00219727C10.3828 -0.0129395 10.5781 0.0500488 10.7285 0.179443Z"
+                                        fill="#21A1CA" fill-opacity="1.000000" fill-rule="evenodd" />
+                                </svg>
+                            </span>
+                            <p class="checkbox__text">
+                                Я согласен с <a class="checkbox__text-link" href="#">политикой обработки персональных
+                                    данных</a>
+                            </p>
+                        </label>
+                        <button type="submit" class="callback__form-btn form-btn btn">
+                            <span class="btn__text">
+                                Оставить заявку
+                            </span>
+                            <span class="btn__icon">
+                                <img src="assets/img/icons/btn-check.svg" alt="">
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section id="about" class="about section-offset scroll-to-block_js" data-aos="fade-up" data-aos-duration="600">
+            <div class="about__container container-1280">
+                <div class="about__wrapper">
+                    <div class="about__info" data-aos="fade-right" data-aos-duration="600">
+                        <div class="about__top section-top">
+                            <h2 class="about__title section-title">
+                                О компании
+                            </h2>
+                        </div>
+                        <div class="about__content content-body">
+                            <p>
+                                Компания РЦСМ Краснодар совместно с *Юр лицо* успешно ведет свою деятельность более 5
+                                лет в
+                                сфере оказания услуг по поверке счетчиков горячей и холодной воды.
+                            </p>
+                            <p>
+                                Также РЦСМ является производителем счетчиков воды и сертифицированных поверочных
+                                установок.
+                                Имея
+                                большой опыт и собственный действующий аттестат аккредитации мы предлагаем
+                                сотрудничество в
+                                Вашем регионе (городе), по поверке приборов учета воды на дому без снятия счетчиков.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="about__preview" data-aos="zoom-in" data-aos-duration="600">
+                        <picture class="about__picture">
+                            <img src="assets/img/sections/about/preview.png" alt="" class="about__img">
+                        </picture>
+                        <div class="about__check check">
+                            <p class="check__title">
+                                Доверяйте только аккредитованным компаниям!
+                            </p>
+                            <p class="check__descr">
+                                Номер аттестата
+                                нашей компании:
+                            </p>
+                            <p class="check__num">
+                                RA.RU.312866
+                            </p>
+                            <button class="check__btn">
+                                <span class="check__btn-text">
+                                    Проверить нас
+                                </span>
+                                <img class="check__btn-icon" src="assets/img/icons/check.svg" alt=""
+                                    aria-label="presentation">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="documents section-offset" data-aos="fade-up" data-aos-duration="600">
+            <div class="documents__container container-1280">
+                <div class="documents__top section-top">
+                    <h2 class="documents__title section-title">
+                        Разрешающие документы
+                    </h2>
+                </div>
+                <p class="documents__title section-descr">
+                    Компания РЦСМ осуществляет свою деятельность законно, мы имеем все разрешающие документы и
+                    действующий аттестат аккредитации
+                </p>
+                <div class="documents__wrapper grid-4-48-48">
+                    <div class="documents__item document decor-item">
+                        <picture class="document__picture">
+                            <img src="assets/img/sections/documents/1.png" alt="" class="document__img">
+                        </picture>
+                        <div class="document__wrapper">
+                            <p class="document__title">
+                                Аттестат аккредитации компании РЦСМ
+                            </p>
+                            <a href="#" class="document__btn">
+                                <span class="document__btn-text">
+                                    Проверить аккредитацию
+                                </span>
+                                <img class="document__btn-icon" src="assets/img/icons/check-black.svg" alt=""
+                                    aria-label="presentation">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="documents__item document decor-item">
+                        <picture class="document__picture">
+                            <img src="assets/img/sections/documents/2.png" alt="" class="document__img">
+                        </picture>
+                        <div class="document__wrapper">
+                            <p class="document__title">
+                                Аттестат аккредитации компании РЦСМ
+                            </p>
+                            <a href="#" class="document__btn">
+                                <span class="document__btn-text">
+                                    Проверить аккредитацию
+                                </span>
+                                <img class="document__btn-icon" src="assets/img/icons/check-black.svg" alt=""
+                                    aria-label="presentation">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="documents__item document decor-item">
+                        <picture class="document__picture">
+                            <img src="assets/img/sections/documents/3.png" alt="" class="document__img">
+                        </picture>
+                        <div class="document__wrapper">
+                            <p class="document__title">
+                                Аттестат аккредитации компании РЦСМ
+                            </p>
+                            <a href="#" class="document__btn">
+                                <span class="document__btn-text">
+                                    Проверить аккредитацию
+                                </span>
+                                <img class="document__btn-icon" src="assets/img/icons/check-black.svg" alt=""
+                                    aria-label="presentation">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="documents__item document decor-item">
+                        <picture class="document__picture">
+                            <img src="assets/img/sections/documents/4.png" alt="" class="document__img">
+                        </picture>
+                        <div class="document__wrapper">
+                            <p class="document__title">
+                                Аттестат аккредитации компании РЦСМ
+                            </p>
+                            <a href="#" class="document__btn">
+                                <span class="document__btn-text">
+                                    Проверить аккредитацию
+                                </span>
+                                <img class="document__btn-icon" src="assets/img/icons/check-black.svg" alt=""
+                                    aria-label="presentation">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="check-block section-offset" data-aos="fade-up" data-aos-duration="600">
+            <div class="block-decor block-decor_left"></div>
+            <div class="block-decor block-decor_right"></div>
+            <div class="check-block__wrapper preview-check" data-aos="fade-up" data-aos-duration="600">
+                <div class="check-block__container container-1280 preview-check__container">
+                    <div class="preview-check__wrapper">
+                        <img src="assets/img/sections/check-block/preview.svg" alt="" class="preview-check__img"
+                            aria-label="presentation">
+                        <div class="preview-check__content">
+                            <p class="preview-check__title">
+                                А что будет, если не поверять счетчик?
+                            </p>
+                            <p class="preview-check__descr">
+                                Давайте обратимся к цифрам. Рассчитаем вашу экономию исходя из среднего расхода воды
+                                на
+                                одного
+                                человека в месяц.
+                            </p>
+                        </div>
+                    </div>
+                    <img src="assets/img/sections/check-block/preview-img.png" alt="" class="preview-check__photo">
+                </div>
+            </div>
+            <div class="check-block__info content-check" data-aos="fade-up" data-aos-duration="600">
+                <div class="content-check__container container-1280">
+                    <div class="content-check__wrapper">
+                        <div class="content-check__block">
+                            <p class="content-check__title">
+                                Счетчик <span class="content-check__title_green">ЕСТЬ</span> <br> и он прошел поверку
+                            </p>
+                            <p class="content-check__descr">
+                                Счетчик установлен и прошел поверку. Средний реальный расход воды в месяц на человека со
+                                счетчиком:
+                            </p>
+                            <div class="content-check__prices">
+                                <div class="content-check__price">
+                                    <p class="content-check__price-title">
+                                        Холодная вода
+                                    </p>
+                                    <p class="content-check__price-num">
+                                        310,40 руб/мес
+                                    </p>
+                                </div>
+                                <div class="content-check__price">
+                                    <p class="content-check__price-title">
+                                        Горячая вода
+                                    </p>
+                                    <p class="content-check__price-num">
+                                        206,05 руб/мес
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-check__block">
+                            <p class="content-check__title">
+                                Счетчика <span class="content-check__title_red">НЕТ</span> <br> или он не поверен
+                            </p>
+                            <p class="content-check__descr">
+                                Счетчика нет или он не прошел поверку своевременно. Применяются нормативы коммунальных
+                                услуг на человека в месяц без счетчика:
+                            </p>
+                            <div class="content-check__prices">
+                                <div class="content-check__price">
+                                    <p class="content-check__price-title">
+                                        Холодная вода
+                                    </p>
+                                    <p class="content-check__price-num content-check__price-num_red">
+                                        1027,38 руб/мес
+                                    </p>
+                                </div>
+                                <div class="content-check__price">
+                                    <p class="content-check__price-title">
+                                        Горячая вода
+                                    </p>
+                                    <p class="content-check__price-num content-check__price-num_red">
+                                        1420,99 руб/мес
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="content-check__text">
+                        Очевидная экономия в 3,64 раза
+                    </p>
+                    <a href="#" class="content-check__btn btn">
+                        <span class="btn__text">
+                            Показать список услуг
+                        </span>
+                        <span class="btn__icon">
+                            <img src="assets/img/icons/btn-icon-advantages.png" alt="" aria-label="presentation">
+                        </span>
+                    </a>
+                </div>
+                <div class="content-check__decor-1"></div>
+                <div class="content-check__decor-2"></div>
+            </div>
+        </section>
+        <section class="callback section-offset" data-aos="fade-up" data-aos-duration="600">
+            <div class="callback__container container-1280">
+                <div class="callback__wrapper">
+                    <div class="callback__content">
+                        <h2 class="callback__title">
+                            Проводим поверку счетчиков воды всех производителей
+                        </h2>
+                        <p class="callback__descr">
+                            У вас нестандартный счетчик и его отказываются поверять?
+                            <span class="callback__descr_green">Мы поверим!</span> Наше оборудование и метрологи могут
+                            работать с любыми марками и производителями
+                            водосчетчиков.
+                        </p>
+                        <picture class="callback__picture">
+                            <img src="assets/img/sections/callback/preview.png" alt="" class="callback__img">
+                        </picture>
+                    </div>
+                    <form method="post" class="callback__form form">
+                        <div class="form-select-data">
+                            <select name="city" class="form-select select">
+                                <option value="Краснодар">Краснодар</option>
+                                <option value="Москва">Москва</option>
+                                <option value="Ростов-на-Дону">Ростов-на-Дону</option>
+                            </select>
+                            <div class="data-select">
+                                <div class="data-select__item">
+                                    <div class="data-select__preview">
+                                        <img src="assets/img/icons/person.svg" alt="" class="data-select__preview-icon">
+                                        <p class="data-select__preview-text">
+                                            Ответственный в вашем городе:
+                                        </p>
+                                    </div>
+                                    <p class="data-select__text">
+                                        Владимир О.В.
+                                    </p>
+                                </div>
+                                <div class="data-select__item">
+                                    <div class="data-select__preview">
+                                        <img src="assets/img/icons/phone.svg" alt="" class="data-select__preview-icon">
+                                        <p class="data-select__preview-text">
+                                            Контактный телефон:
+                                        </p>
+                                    </div>
+                                    <a href="tel:89186593343" class="data-select__text data-select__text_decor">
+                                        8 918 659 33 43
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <p class="form-field__title">
+                                Ваше имя:
+                            </p>
+                            <input type="text" name="name" placeholder="Введите имя" class="form-field__input">
+                        </div>
+                        <div class="form-field">
+                            <p class="form-field__title">
+                                Ваш номер телефона:
+                            </p>
+                            <input type="tel" name="name" placeholder="+7 (___) ___ - __ - __"
+                                class="form-field__input">
+                        </div>
+                        <label class="callback__checkbox checkbox">
+                            <input type="checkbox" class="checkbox__input visually-hidden">
+                            <span class="checkbox__inner">
+                                <svg width="10.990234" height="8.499268" viewBox="0 0 10.9902 8.49927" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <desc>
+                                        Created with Pixso.
+                                    </desc>
+                                    <defs />
+                                    <path id="Vector"
+                                        d="M10.7285 0.179443C10.8047 0.243652 10.8652 0.321777 10.9102 0.409668C10.9551 0.497559 10.9824 0.593506 10.9883 0.69165C10.9961 0.789795 10.9844 0.888672 10.9531 0.982422C10.9238 1.07593 10.875 1.1626 10.8105 1.23755L4.81055 8.23755C4.74219 8.31592 4.66016 8.37964 4.56641 8.42456C4.47461 8.46948 4.37305 8.49487 4.26953 8.49878C4.16602 8.50269 4.0625 8.48535 3.9668 8.44751C3.87109 8.40991 3.7832 8.35254 3.71094 8.27954L0.210938 4.77954C0.0742188 4.63794 -0.00195312 4.44849 0 4.25171C0.00195312 4.05518 0.0800781 3.86719 0.220703 3.72803C0.359375 3.58911 0.546875 3.51025 0.744141 3.50879C0.941406 3.50708 1.13086 3.58276 1.27148 3.71948L4.19922 6.64648L9.67188 0.261475C9.80273 0.110596 9.98633 0.017334 10.1836 0.00219727C10.3828 -0.0129395 10.5781 0.0500488 10.7285 0.179443Z"
+                                        fill="#21A1CA" fill-opacity="1.000000" fill-rule="evenodd" />
+                                </svg>
+                            </span>
+                            <p class="checkbox__text">
+                                Я согласен с <a class="checkbox__text-link" href="#">политикой обработки персональных
+                                    данных</a>
+                            </p>
+                        </label>
+                        <button type="submit" class="callback__form-btn form-btn btn">
+                            <span class="btn__text">
+                                Оставить заявку
+                            </span>
+                            <span class="btn__icon">
+                                <img src="assets/img/icons/btn-check.svg" alt="">
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section id="faq" class="faq section-offset scroll-to-block_js" data-aos="fade-up" data-aos-duration="600">
+            <div class="faq__container container-1280">
+                <div class="faq__top section-top section-top_mb-40">
+                    <h2 class="faq__title section-title">
+                        Часто задаваемые вопросы
+                    </h2>
+                </div>
+                <div class="faq__wrapper accor-wrapper">
+                    <div class="faq__accor question accor" data-aos="fade-up" data-aos-duration="600">
+                        <button class="question__title accor-open" data-accordion-button>
+                            <span class="question__title-text">
+                                Можно ли вылечить алкоголика без его ведома/согласия?
+                            </span>
+                            <span class="question__title-decor accor-open-decor">
+                                <img src="assets/img/icons/accor-arrow.svg" alt="" aria-label="presentation">
+                            </span>
+                        </button>
+                        <div class="question__info accor-full">
+                            <div class="question__info-wrapper accor-full-content" data-accordion-content>
+                                <div class="question__info-content">
+                                    <p>
+                                        В современной наркологической практике используют медицинскую интервенцию —
+                                        выезд на
+                                        дом психотерапевта для проведения мотивирующей беседы. Если больной не страдает
+                                        от
+                                        деградации личности, отказ от наркологической помощи обычно связан с
+                                        определёнными
+                                        причинами — недоверием к врачам, страхами. Психолог поможет справиться с этими
+                                        деструктивными установками, осознать важность возвращения к трезвости и дать
+                                        добровольное согласие на терапию. По статистике, такой подход имеет
+                                        эффективность
+                                        более чем в 85% случаев, даже если близким алкоголика месяцами не удавалось
+                                        убедить
+                                        его, обратиться к врачу.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq__accor question accor" data-aos="fade-up" data-aos-duration="600">
+                        <button class="question__title accor-open" data-accordion-button>
+                            <span class="question__title-text">
+                                Сколько длится лечение алкоголизма?
+                            </span>
+                            <span class="question__title-decor accor-open-decor">
+                                <img src="assets/img/icons/accor-arrow.svg" alt="" aria-label="presentation">
+                            </span>
+                        </button>
+                        <div class="question__info accor-full">
+                            <div class="question__info-wrapper accor-full-content" data-accordion-content>
+                                <div class="question__info-content">
+                                    <p>
+                                        В современной наркологической практике используют медицинскую интервенцию —
+                                        выезд на
+                                        дом психотерапевта для проведения мотивирующей беседы. Если больной не страдает
+                                        от
+                                        деградации личности, отказ от наркологической помощи обычно связан с
+                                        определёнными
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq__accor question accor" data-aos="fade-up" data-aos-duration="600">
+                        <button class="question__title accor-open" data-accordion-button>
+                            <span class="question__title-text">
+                                Можно ли вылечить алкоголика без его ведома/согласия?
+                            </span>
+                            <span class="question__title-decor accor-open-decor">
+                                <img src="assets/img/icons/accor-arrow.svg" alt="" aria-label="presentation">
+                            </span>
+                        </button>
+                        <div class="question__info accor-full">
+                            <div class="question__info-wrapper accor-full-content" data-accordion-content>
+                                <div class="question__info-content">
+                                    <p>
+                                        В современной наркологической практике используют медицинскую интервенцию —
+                                        выезд на
+                                        дом психотерапевта для проведения мотивирующей беседы. Если больной не страдает
+                                        от
+                                        деградации личности, отказ от наркологической помощи обычно связан с
+                                        определёнными
+                                        причинами — недоверием к врачам, страхами. Психолог поможет справиться с этими
+                                        деструктивными установками, осознать важность возвращения к трезвости и дать
+                                        добровольное согласие на терапию. По статистике, такой подход имеет
+                                        эффективность
+                                        более чем в 85% случаев, даже если близким алкоголика месяцами не удавалось
+                                        убедить
+                                        его, обратиться к врачу.
+                                    </p>
+                                    <p>
+                                        В современной наркологической практике используют медицинскую интервенцию —
+                                        выезд на
+                                        дом психотерапевта для проведения мотивирующей беседы. Если больной не страдает
+                                        от
+                                        деградации личности, отказ от наркологической помощи обычно связан с
+                                        определёнными
+                                        причинами — недоверием к врачам, страхами. Психолог поможет справиться с этими
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq__accor question accor" data-aos="fade-up" data-aos-duration="600">
+                        <button class="question__title accor-open" data-accordion-button>
+                            <span class="question__title-text">
+                                Сколько длится лечение алкоголизма?
+                            </span>
+                            <span class="question__title-decor accor-open-decor">
+                                <img src="assets/img/icons/accor-arrow.svg" alt="" aria-label="presentation">
+                            </span>
+                        </button>
+                        <div class="question__info accor-full">
+                            <div class="question__info-wrapper accor-full-content" data-accordion-content>
+                                <div class="question__info-content">
+                                    <p>
+                                        В современной наркологической практике используют медицинскую интервенцию —
+                                        выезд на
+                                        дом психотерапевта для проведения мотивирующей беседы. Если больной не страдает
+                                        от
+                                        деградации личности, отказ от наркологической помощи обычно связан с
+                                        определёнными
+                                        причинами — недоверием к врачам, страхами. Психолог поможет справиться с этими
+                                        деструктивными установками, осознать важность возвращения к трезвости и дать
+                                        добровольное согласие на терапию. По статистике, такой подход имеет
+                                        эффективность
+                                        более чем в 85% случаев, даже если близким алкоголика месяцами не удавалось
+                                        убедить
+                                        его, обратиться к врачу.
+                                    </p>
+                                    <p>
+                                        В современной наркологической практике используют медицинскую интервенцию —
+                                        выезд на
+                                        дом психотерапевта для проведения мотивирующей беседы. Если больной не страдает
+                                        от
+                                        деградации личности, отказ от наркологической помощи обычно связан с
+                                        определёнными
+                                        причинами — недоверием к врачам, страхами. Психолог поможет справиться с этими
+                                        деструктивными установками, осознать важность возвращения к трезвости и дать
+                                        добровольное согласие на терапию. По статистике, такой подход имеет
+                                        эффективность
+                                        более чем в 85% случаев, даже если близким алкоголика месяцами не удавалось
+                                        убедить
+                                        его, обратиться к врачу.
+                                    </p>
+                                    <p>
+                                        В современной наркологической практике используют медицинскую интервенцию —
+                                        выезд на
+                                        дом психотерапевта для проведения мотивирующей беседы. Если больной не страдает
+                                        от
+                                        деградации личности, отказ от наркологической помощи обычно связан с
+                                        определёнными
+                                        причинами — недоверием к врачам, страхами. Психолог поможет справиться с этими
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq__accor question accor" data-aos="fade-up" data-aos-duration="600">
+                        <button class="question__title accor-open" data-accordion-button>
+                            <span class="question__title-text">
+                                Можно ли вылечить алкоголика без его ведома/согласия?
+                            </span>
+                            <span class="question__title-decor accor-open-decor">
+                                <img src="assets/img/icons/accor-arrow.svg" alt="" aria-label="presentation">
+                            </span>
+                        </button>
+                        <div class="question__info accor-full">
+                            <div class="question__info-wrapper accor-full-content" data-accordion-content>
+                                <div class="question__info-content">
+                                    <p>
+                                        В современной наркологической практике используют медицинскую интервенцию —
+                                        выезд на
+                                        дом психотерапевта для проведения мотивирующей беседы. Если больной не страдает
+                                        от
+                                        деградации личности, отказ от наркологической помощи обычно связан с
+                                        определёнными
+                                        причинами — недоверием к врачам, страхами. Психолог поможет справиться с этими
+                                        деструктивными установками, осознать важность возвращения к трезвости и дать
+                                        добровольное согласие на терапию. По статистике, такой подход имеет
+                                        эффективность
+                                        более чем в 85% случаев, даже если близким алкоголика месяцами не удавалось
+                                        убедить
+                                        его, обратиться к врачу.
+                                    </p>
+                                    <p>
+                                        В современной наркологической практике используют медицинскую интервенцию —
+                                        выезд на
+                                        дом психотерапевта для проведения мотивирующей беседы. Если больной не страдает
+                                        от
+                                        деградации личности, отказ от наркологической помощи обычно связан с
+                                        определёнными
+                                        причинами — недоверием к врачам, страхами. Психолог поможет справиться с этими
+                                        деструктивными установками, осознать важность возвращения к трезвости и дать
+                                        добровольное согласие на терапию. По статистике, такой подход имеет
+                                        эффективность
+                                        более чем в 85% случаев, даже если близким алкоголика месяцами не удавалось
+                                        убедить
+                                        его, обратиться к врачу.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contacts section-offset" data-aos="fade-up" data-aos-duration="600">
+            <div class="contacts__container container-1280">
+                <div class="contacts__wrapper">
+                    <div class="contacts__content">
+                        <h2 class="contacts__title">
+                            Свяжитесь с нами, узнайте больше
+                        </h2>
+                        <p class="contacts__descr">
+                            Выберите удобный для вас способ связи с ответственным метрологом или оставьте заявку на
+                            обратный
+                            звонок.
+                        </p>
+                    </div>
+                    <div class="contacts__info">
+                        <div class="contacts__phone">
+                            <p class="contacts__phone-text">
+                                Нажмите, чтобы позвонить. Ответим на все ваши вопросы в рабочее время.
+                            </p>
+                            <a href="tel:89186593344" class="contacts__phone-link connection-phone">
+                                <span class="connection-phone__text">
+                                    8 918 659-33-44
+                                </span>
+                            </a>
+                        </div>
+                        <ul class="contacts__info-socials contacts-socials">
+                            <li class="contacts-socials__item contacts-social contacts-social_tg">
+                                <a href="#" class="contacts-social__link">
+                                    <img src="assets/img/icons/socials/tg.svg" alt="" class="contacts-social__img">
+                                    <span class="contacts-social__text">
+                                        в Telegram
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="contacts-socials__item contacts-social contacts-social_wa">
+                                <a href="#" class="contacts-social__link">
+                                    <img src="assets/img/icons/socials/wa.svg" alt="" class="contacts-social__img">
+                                    <span class="contacts-social__text">
+                                        в WhatsApp
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <button class="contacts__info-btn btn">
+                            <span class="btn__text">
+                                Позвоните мне
+                            </span>
+                            <span class="btn__icon">
+                                <img src="assets/img/icons/btn-check.svg" alt="">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="warning section-offset" data-aos="fade-up" data-aos-duration="600">
+            <div class="warning__container container-1280">
+                <div class="warning__wrapper">
+                    <div class="warning__content">
+                        <h2 class="warning__title">
+                            Не забудьте предоставить акт выполненных работ в Вашу УК или ТСЖ
+                        </h2>
+                        <p class="warning__descr">
+                            Какое-то описание чтобы сгладить углы
+                        </p>
+                    </div>
+                    <img src="assets/img/sections/warning/warning.svg" alt="" class="warning__img"
+                        aria-label="presentation">
+                </div>
+            </div>
+        </section>
     </main>
+    <footer class="footer" data-aos="fade-up" data-aos-duration="600">
+        <div class="footer__top">
+            <div class="footer__top-container container-1280">
+                <div class="header__info">
+                    <a href="/" class="header__logo logo">
+                        <img src="assets/img/logo.svg" alt="" class="logo__img">
+                    </a>
+                    <button class="header__city">
+                        Санкт-петербург
+                    </button>
+                </div>
+                <div class="connection">
+                    <a href="tel:89186593344" class="connection__phone connection-phone">
+                        <span class="connection-phone__text">
+                            8 918 659-33-44
+                        </span>
+                    </a>
+                    <ul class="connection__socials socials">
+                        <li class="socials__item social">
+                            <a href="#" target="_blank" class="social__link">
+                                <img src="assets/img/icons/socials/tg.svg" alt="" class="social__img">
+                            </a>
+                        </li>
+                        <li class="socials__item social">
+                            <a href="#" target="_blank" class="social__link">
+                                <img src="assets/img/icons/socials/wa.svg" alt="" class="social__img">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="footer__bottom-container container-1280">
+                <ul class="footer__menu">
+                    <li class="footer__menu-item">
+                        <a href="#steps" class="footer__menu-link hover-opacity-05">
+                            Как мы работаем
+                        </a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a href="#services" class="footer__menu-link hover-opacity-05">
+                            Услуги
+                        </a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a href="#guarantees" class="footer__menu-link hover-opacity-05">
+                            Гарантии
+                        </a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a href="#about" class="footer__menu-link hover-opacity-05">
+                            О компании
+                        </a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a href="#faq" class="footer__menu-link hover-opacity-05">
+                            Вопросы
+                        </a>
+                    </li>
+                </ul>
+                <div class="footer__info">
+                    <div class="footer__requisites requisites">
+                        <p class="requisites__text">
+                            ООО КАКОЕ_ТО ЮР ЛИЦО
+                        </p>
+                        <p class="requisites__text">
+                            ИНН 0000000000000
+                        </p>
+                        <p class="requisites__text">
+                            Свидетельство №000000000000
+                        </p>
+                    </div>
+                    <div class="footer__info-links">
+                        <a href="tel:88000000000" class="footer__info-link hover-opacity-05">
+                            8 800 000 00 00
+                        </a>
+                        <a href="mailto:Mail.info@mail.com" class="footer__info-link hover-opacity-05">
+                            Mail.info@mail.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__copyright">
+            <div class="footer__copyright-container container-1280">
+                <p class="footer__copyright-text">
+                    РЦСМ 2023 © Все права защищены <a class="footer__copyright-link hover-opacity-05" href="#">Карта сайта</a>
+                </p>
+                <p class="footer__copyright-text">
+                    “РЦСМ” является зарегистрированной торговой маркой
+                </p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
