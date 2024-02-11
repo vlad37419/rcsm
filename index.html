@@ -27,6 +27,14 @@
     <header class="header">
         <div class="header__container container">
             <div class="header__wrapper">
+                <div class="header__menu-action">
+                    <button class="header__menu-open open-menu">
+                        <img src="assets/img/icons/menu-open.svg" alt="" class="open-menu__icon">
+                    </button>
+                    <button class="header__menu-close close-menu">
+                        <img src="assets/img/icons/menu-close.svg" alt="" class="open-menu__icon">
+                    </button>
+                </div>
                 <div class="header__info">
                     <a href="/" class="header__logo logo">
                         <img src="assets/img/logo.svg" alt="" class="logo__img">
@@ -35,35 +43,47 @@
                         Санкт-петербург
                     </button>
                 </div>
-                <nav class="header__menu menu">
-                    <ul class="menu__list">
-                        <li class="menu__item"><a href="#steps" class="menu__link">Как мы работаем</a></li>
-                        <li class="menu__item"><a href="#services" class="menu__link">Услуги</a></li>
-                        <li class="menu__item"><a href="#guarantees" class="menu__link">Гарантии</a></li>
-                        <li class="menu__item"><a href="#about" class="menu__link">О компании</a></li>
-                        <li class="menu__item"><a href="#faq" class="menu__link">Вопросы</a></li>
-                    </ul>
-                </nav>
-                <div class="header__connection connection">
-                    <a href="tel:89186593344" class="connection__phone connection-phone">
-                        <span class="connection-phone__text">
-                            8 918 659-33-44
-                        </span>
-                    </a>
-                    <ul class="connection__socials socials">
-                        <li class="socials__item social">
-                            <a href="#" target="_blank" class="social__link">
-                                <img src="assets/img/icons/socials/tg.svg" alt="" class="social__img">
-                            </a>
-                        </li>
-                        <li class="socials__item social">
-                            <a href="#" target="_blank" class="social__link">
-                                <img src="assets/img/icons/socials/wa.svg" alt="" class="social__img">
-                            </a>
-                        </li>
-                    </ul>
+                <a href="tel:89186593344" class="header__phone-mobile">
+                    <img src="assets/img/icons/mobile-phone.svg" alt="" class="header__phone-mobile-icon">
+                </a>
+                <div class="header__dropdown">
+                    <nav class="header__menu menu">
+                        <ul class="menu__list">
+                            <li class="menu__item"><a href="#steps" class="menu__link">Как мы работаем</a></li>
+                            <li class="menu__item"><a href="#services" class="menu__link">Услуги</a></li>
+                            <li class="menu__item"><a href="#guarantees" class="menu__link">Гарантии</a></li>
+                            <li class="menu__item"><a href="#about" class="menu__link">О компании</a></li>
+                            <li class="menu__item"><a href="#faq" class="menu__link">Вопросы</a></li>
+                        </ul>
+                    </nav>
+                    <div class="header__connection connection">
+                        <a href="tel:89186593344" class="connection__phone connection-phone">
+                            <span class="connection-phone__text">
+                                8 918 659-33-44
+                            </span>
+                        </a>
+                        <ul class="connection__socials socials">
+                            <li class="socials__item social">
+                                <a href="#" target="_blank" class="social__link">
+                                    <img src="assets/img/icons/socials/tg.svg" alt="" class="social__img">
+                                </a>
+                            </li>
+                            <li class="socials__item social">
+                                <a href="#" target="_blank" class="social__link">
+                                    <img src="assets/img/icons/socials/wa.svg" alt="" class="social__img">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="header__dropdown-close-menu close-menu">
+                        Закрыть меню
+                    </button>
                 </div>
             </div>
+            <p class="header__text-mobile">
+                Поверим счетчик воды без снятия за хххх рублей
+                в <a href="" class="header__text-mobile-link">*название города*</a>
+            </p>
         </div>
     </header>
     <main class="main">
@@ -78,28 +98,32 @@
                     <div class="promo__row">
                         <div class="promo__content">
                             <div class="promo__stickers stickers">
-                                <div class="stickers__item sticker" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600">
+                                <div class="stickers__item sticker" data-aos="zoom-in" data-aos-duration="600"
+                                    data-aos-delay="600">
                                     <img src="assets/img/icons/stickers/1.svg" alt="" class="sticker__icon"
                                         aria-label="presentation">
                                     <p class="sticker__text">
                                         Быстро
                                     </p>
                                 </div>
-                                <div class="stickers__item sticker" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="650">
+                                <div class="stickers__item sticker" data-aos="zoom-in" data-aos-duration="600"
+                                    data-aos-delay="650">
                                     <img src="assets/img/icons/stickers/2.svg" alt="" class="sticker__icon"
                                         aria-label="presentation">
                                     <p class="sticker__text">
                                         Качественно
                                     </p>
                                 </div>
-                                <div class="stickers__item sticker" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="700">
+                                <div class="stickers__item sticker" data-aos="zoom-in" data-aos-duration="600"
+                                    data-aos-delay="700">
                                     <img src="assets/img/icons/stickers/3.svg" alt="" class="sticker__icon"
                                         aria-label="presentation">
                                     <p class="sticker__text">
                                         Официально
                                     </p>
                                 </div>
-                                <div class="stickers__item sticker" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="750">
+                                <div class="stickers__item sticker" data-aos="zoom-in" data-aos-duration="600"
+                                    data-aos-delay="750">
                                     <img src="assets/img/icons/stickers/4.svg" alt="" class="sticker__icon"
                                         aria-label="presentation">
                                     <p class="sticker__text">
@@ -107,7 +131,8 @@
                                     </p>
                                 </div>
                             </div>
-                            <h1 class="promo__title page-title" data-aos="fade-right" data-aos-duration="600" data-aos-delay="600">
+                            <h1 class="promo__title page-title" data-aos="fade-right" data-aos-duration="600"
+                                data-aos-delay="600">
                                 Поверка счетчиков воды без снятия от ХХХ руб в Краснодаре
                             </h1>
                             <ul class="promo__list" data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
@@ -169,7 +194,8 @@
                         Это выгодная и удобная услуга, проводится по методике ХХХХХХХХ, экономит ваше время и нервы.
                     </p>
                     <div class="advantages__row grid-3-36-48">
-                        <div class="advantages__item advantage decor-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
+                        <div class="advantages__item advantage decor-item" data-aos="zoom-in" data-aos-duration="600"
+                            data-aos-delay="200">
                             <picture class="advantage__picture">
                                 <img src="assets/img/sections/advantages/1.png" alt="" class="advantage__img">
                             </picture>
@@ -180,7 +206,8 @@
                                 Счетчик воды поверяется на дому согласно методике ХХХХХХХХХ, без снятия, без демонтажа
                             </p>
                         </div>
-                        <div class="advantages__item advantage decor-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="250">
+                        <div class="advantages__item advantage decor-item" data-aos="zoom-in" data-aos-duration="600"
+                            data-aos-delay="250">
                             <picture class="advantage__picture">
                                 <img src="assets/img/sections/advantages/2.png" alt="" class="advantage__img">
                             </picture>
@@ -192,7 +219,8 @@
                                 остаются нетронутыми
                             </p>
                         </div>
-                        <div class="advantages__item advantage decor-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300">
+                        <div class="advantages__item advantage decor-item" data-aos="zoom-in" data-aos-duration="600"
+                            data-aos-delay="300">
                             <picture class="advantage__picture">
                                 <img src="assets/img/sections/advantages/3.png" alt="" class="advantage__img">
                             </picture>
@@ -206,7 +234,7 @@
                         </div>
                     </div>
                     <div class="advantages__btn-wrapper">
-                        <a href="#" class="advantages__btn btn">
+                        <a href="#services" class="advantages__btn btn">
                             <span class="btn__text">
                                 Показать список услуг
                             </span>
@@ -248,6 +276,8 @@
                                 </button>
                                 <button class="promotions__slide promotion promotion_active popup-btn swiper-slide">
                                     <picture class="promotion__picture">
+                                        <source srcset="assets/img/sections/promotions/promotion-background-mobile.png"
+                                            media="(max-width: 1024px)" />
                                         <img src="assets/img/sections/promotions/promotion-background.png" alt=""
                                             class="promotion__img">
                                     </picture>
@@ -1534,7 +1564,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="promotions__slider-btn promotions__slider-btn_prev slider-btn slider-btn_prev">
+                    <button class="reviews__slider-btn reviews__slider-btn_prev slider-btn slider-btn_prev">
                         <svg width="32" height="24" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_206_771)">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -1548,7 +1578,7 @@
                             </defs>
                         </svg>
                     </button>
-                    <button class="promotions__slider-btn promotions__slider-btn_next slider-btn slider-btn_next">
+                    <button class="reviews__slider-btn reviews__slider-btn_next slider-btn slider-btn_next">
                         <svg width="32" height="24" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_206_794)">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -1930,10 +1960,7 @@
                     </p>
                     <a href="#" class="content-check__btn btn">
                         <span class="btn__text">
-                            Показать список услуг
-                        </span>
-                        <span class="btn__icon">
-                            <img src="assets/img/icons/btn-icon-advantages.png" alt="" aria-label="presentation">
+                            Начать экономить
                         </span>
                     </a>
                 </div>

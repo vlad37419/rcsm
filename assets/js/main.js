@@ -9,6 +9,16 @@ function initPhoneMask() {
     });
 }
 
+function menuOpen(menuSelector) {
+    menuSelector.classList.toggle('active');
+    document.body.classList.toggle('lock');
+}
+
+function menuClose(menuSelector) {
+    menuSelector.classList.remove('active');
+    document.body.classList.remove('lock');
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     // promotions sliders
     const promotionsSlidersList = document.querySelectorAll('.promotions__slider');
@@ -25,6 +35,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     crossFade: true
                 },
                 loop: true,
+                on: {
+                    slideChange: function () {
+                        setTimeout(() => {
+                            AOS.refresh();
+                        }, 500);
+                    }
+                }
             });
         });
     }
@@ -66,11 +83,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     prevEl: slider.closest('.slider-wrapper').querySelector('.slider-btn_prev'),
                     nextEl: slider.closest('.slider-wrapper').querySelector('.slider-btn_next'),
                 },
-                effect: 'fade',
-                fadeEffect: {
-                    crossFade: true
-                },
-                loop: true,
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1.1,
+                        spaceBetween: 8,
+                    },
+                    1025: {
+                        slidesPerView: 1,
+                    },
+                }
             });
         });
     }
@@ -221,11 +242,29 @@ document.addEventListener('DOMContentLoaded', function () {
             const elementPosition = scrollTarget.getBoundingClientRect().top;
             const offsetPosition = elementPosition - topOffset;
 
+            menuClose(header);
+
             window.scrollBy({
                 top: offsetPosition,
                 behavior: 'smooth'
             });
         });
+    });
+
+    // menu-mobile
+    const openMenuBtns = document.querySelectorAll('.open-menu');
+    const closeMenuBtns = document.querySelectorAll('.close-menu');
+
+    openMenuBtns.forEach(function (openMenuBtn) {
+        openMenuBtn.addEventListener('click', function () {
+            menuOpen(header);
+        })
+    });
+
+    closeMenuBtns.forEach(function (closeMenuBtn) {
+        closeMenuBtn.addEventListener('click', function () {
+            menuClose(header);
+        })
     });
 
     initPhoneMask();
