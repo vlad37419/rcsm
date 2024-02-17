@@ -267,6 +267,20 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     });
 
+    // video
+    const videoList = document.querySelectorAll('.video');
+
+    if (videoList.length > 0) {
+        videoList.forEach((video) => {
+            const videoItem = video.querySelector('.video__item');
+            const videoPlay = video.querySelector('.video__preview');
+            videoPlay.addEventListener('click', function() {
+                video.classList.add('active');
+                videoItem.play();
+            });
+        });
+    }
+
     initPhoneMask();
     AOS.init({
         once: true,
