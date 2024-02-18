@@ -227,8 +227,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
                     }
                     );
-
-                    document.querySelectorAll('.side-menu .side-menu__item')[i].querySelector('a[href^="#"]').classList.add('active');
                 }
             }
             );
@@ -305,7 +303,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Popups
     function popupClose(popupActive) {
-        popupActive.querySelector('.form').dataset.additional = "Неизвестная форма";
+        const formActive = popupActive.querySelector('.form');
+        if (formActive) {
+            formActive.dataset.additional = "Неизвестная форма";
+        }
         popupActive.classList.remove('open');
         document.body.classList.remove('lock');
         document.querySelector('html').style.paddingRight = 0;
@@ -344,7 +345,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
             menuClose(header);
 
-            currentForm.dataset.additional = additional;
+            if (currentForm) {
+                currentForm.dataset.additional = additional;
+            }
             currentPopup.classList.add('open');
             document.body.classList.add('lock');
             document.querySelector('html').style.paddingRight = setWidthScrollBar() + 'px';
@@ -365,6 +368,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // validator for form
         const validation = new JustValidate(`#${currentFormId}`);
+        const currentFormEmail = currentForm.querySelector('.mail');
+        const currentFormPhone = currentForm.querySelector('.phone');
+        const currentFormMessage = currentForm.querySelector('.message');
 
         validation
             .addField('.name', [
@@ -383,7 +389,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     errorMessage: 'Недопустимый формат',
                 },
             ])
-            .addField('.phone', [
+            .addField('.policy', [
+                {
+                    rule: 'required',
+                    errorMessage: 'Это обязательное поле',
+                },
+            ]);
+
+        if (currentFormPhone) {
+            validation.addField('.phone', [
                 {
                     rule: 'required',
                     errorMessage: 'Вы не ввели телефон',
@@ -396,20 +410,30 @@ document.addEventListener('DOMContentLoaded', function () {
                     },
                     errorMessage: 'Введите номер телефона полностью',
                 },
-            ])
-            .addField('.policy', [
+            ]);
+        }
+
+        if (currentFormEmail) {
+            validation.addField('.mail', [
                 {
                     rule: 'required',
                     errorMessage: 'Это обязательное поле',
                 },
-            ])
-            .onSuccess((event) => {
-                const successMessage = document.createElement('p');
-                successMessage.classList.add('form__success-message');
-                successMessage.textContent = 'Форма отправлена, скоро вам позвонят!';
-                console.log(currentForm);
-                currentForm.append(successMessage);
-            });
+                {
+                    rule: 'email',
+                    errorMessage: 'Введите почту правильно',
+                },
+            ]);
+        }
+
+        if (currentFormMessage) {
+            validation.addField('.message', [
+                {
+                    rule: 'required',
+                    errorMessage: 'Это обязательное поле',
+                },
+            ]);
+        }
 
         currentForm.addEventListener('submit', async function (event) {
             event.preventDefault();
@@ -433,21 +457,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 data.FIELDS = fieldsResult;
 
-                console.log(data);
-
                 fetch("fetch/send.php", {
                     body: JSON.stringify({
                         action: 'send',
                         "DATA": data,
                         "ADDITIONAL": currentForm.dataset.additional,
+                        "REVIEW": currentForm.dataset.action == 'review' ? 'Y' : 'N',
                     }),
                     headers: {
                         'Content-type': 'application/json',
                     },
                     method: "POST"
                 }).then(async (resp) => {
-                    console.log('test');
-                    console.log(await resp.json());
+                    const fieldsResetList = currentForm.querySelectorAll('.form-field__input');
+                    fieldsResetList.forEach((field) => {
+                        field.value = '';
+                    });
+                    const response = await resp.json();
+                    console.log(response);
+                    const responseTitle = document.querySelector('.response-popup__title');
+                    const responseDescr = document.querySelector('.response-popup__descr');
+                    const responseImg = document.querySelector('.response-popup__img');
+                    responseTitle.textContent = response.RESPONSE.TITLE;
+                    responseDescr.textContent = response.RESPONSE.DESCR;
+                    responseImg.setAttribute('src', response.RESPONSE.IMG);
+                    const popupResponseBtn = document.querySelector('[data-path="response"]');
+                    popupResponseBtn.click();
                 });
             }
         });

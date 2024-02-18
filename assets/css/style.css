@@ -494,6 +494,10 @@ main {
     background-color: rgb(255, 255, 255);
 }
 
+textarea.form-field__input {
+    height: 160px;
+}
+
 .checbox-wrapper {
     position: relative;
     margin-bottom: 16px;
@@ -775,6 +779,7 @@ main {
 
 .popup__content {
     max-width: 800px;
+    width: 100%;
     position: relative;
     background-color: #fff;
 }
@@ -807,6 +812,50 @@ main {
     margin-top: 5px;
     line-height: 120%;
     color: red !important;
+}
+
+.response-popup .callback__wrapper {
+    grid-template-columns: initial;
+}
+
+.response-popup__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.response-popup__title {
+    color: rgb(0, 58, 103);
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 120%;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.response-popup__descr {
+    max-width: 460px;
+    color: rgb(0, 58, 103);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 140%;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.response-popup__img {
+    margin-bottom: 32px;
+}
+
+.response-popup__close {
+    padding: 16px 20px;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 140%;
+    color: rgb(0, 58, 103);
+    min-width: 240px;
 }
 
 /* header */
@@ -1898,6 +1947,11 @@ main {
     gap: 40px;
 }
 
+.callback__content {
+    display: flex;
+    flex-direction: column;
+}
+
 .callback__title {
     color: rgb(0, 58, 103);
     font-size: 40px;
@@ -1907,6 +1961,7 @@ main {
 }
 
 .callback__descr {
+    flex-grow: 1;
     color: rgb(0, 58, 103);
     font-size: 16px;
     font-weight: 500;
@@ -2712,7 +2767,7 @@ main {
     .connection-phone:hover .connection-phone__icon {
         background-color: #fff;
     }
-    
+
     .connection-phone:hover .connection-phone__icon svg path {
         fill: rgb(33, 161, 202);
     }
@@ -2725,7 +2780,7 @@ main {
     .connection-phone:hover {
         border-color: rgba(33, 161, 202, 0.30);
     }
-    
+
     .connection__phone-show:hover {
         border-color: rgba(33, 161, 202, 0.30);
     }
@@ -2880,6 +2935,14 @@ main {
 
     .popup__content .callback__picture {
         display: none;
+    }
+
+    .response-popup__title {
+        font-size: 28px;
+    }
+
+    .response-popup__content {
+        padding: 32px 0;
     }
 
     /* header */

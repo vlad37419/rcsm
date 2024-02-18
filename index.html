@@ -59,7 +59,8 @@
                     </nav>
                     <div class="header__connection connection">
                         <div class="connection__phone-wrapper">
-                            <button class="connection__phone connection-phone popup-btn" data-path="form">
+                            <button class="connection__phone connection-phone popup-btn" data-path="form"
+                                data-additional="Форма в попапе, после нажатия на номер в шапке">
                                 <span class="connection-phone__text">
                                     8 918 659-33-44
                                 </span>
@@ -108,7 +109,7 @@
             <div class="block-decor block-decor_left"></div>
             <div class="block-decor block-decor_right"></div>
             <div class="promo__wrapper">
-                <video src="assets/videos/eminem-rap-god.mp4" class="promo__video" autoplay muted></video>
+                <video src="assets/videos/promo.mp4" class="promo__video" autoplay muted></video>
                 <img src="assets/img/sections/promo/preview.png" alt="" class="promo__preview"
                     aria-label="presentation">
                 <div class="promo__container container">
@@ -1415,7 +1416,7 @@
                     <h2 class="reviews__title section-title">
                         Отзывы об услугах
                     </h2>
-                    <button class="reviews__btn">
+                    <button class="reviews__btn popup-btn" data-path="add-review">
                         ОСТАВИТЬ ОТЗЫВ
                     </button>
                 </div>
@@ -1991,7 +1992,7 @@
                             <img src="assets/img/sections/callback/preview.png" alt="" class="callback__img">
                         </picture>
                     </div>
-                    <form method="post" class="callback__form form">
+                    <form id="form-page" method="post" class="callback__form form form-to-telegramm" data-additional="Форма в блоке 'Проводим поверку счетчиков воды всех производителей'">
                         <div class="form-select-data">
                             <select name="city" class="form-select select">
                                 <option value="Краснодар">Краснодар</option>
@@ -2043,38 +2044,49 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="form-select-data active">
+                            <p class="form-field__title">
+                                Район:
+                            </p>
+                            <select name="district" class="form-select select">
+                                <option value="Западный">Западный</option>
+                                <option value="Северный">Северный</option>
+                                <option value="Ворошиловский">Ворошиловский</option>
+                                <option value="Чкаловский">Чкаловский</option>
+                            </select>
+                        </div>
                         <div class="form-field">
                             <p class="form-field__title">
                                 Ваше имя:
                             </p>
-                            <input type="text" name="name" placeholder="Введите имя" class="form-field__input">
+                            <input type="text" name="name" placeholder="Введите имя" class="form-field__input name">
                         </div>
                         <div class="form-field">
                             <p class="form-field__title">
                                 Ваш номер телефона:
                             </p>
-                            <input type="tel" name="name" placeholder="+7 (___) ___ - __ - __"
-                                class="form-field__input">
+                            <input type="tel" name="phone" placeholder="+7 (___) ___ - __ - __"
+                                class="form-field__input phone">
                         </div>
-                        <label class="callback__checkbox checkbox">
-                            <input type="checkbox" class="checkbox__input visually-hidden">
-                            <span class="checkbox__inner">
-                                <svg width="10.990234" height="8.499268" viewBox="0 0 10.9902 8.49927" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <desc>
-                                        Created with Pixso.
-                                    </desc>
-                                    <defs />
-                                    <path id="Vector"
-                                        d="M10.7285 0.179443C10.8047 0.243652 10.8652 0.321777 10.9102 0.409668C10.9551 0.497559 10.9824 0.593506 10.9883 0.69165C10.9961 0.789795 10.9844 0.888672 10.9531 0.982422C10.9238 1.07593 10.875 1.1626 10.8105 1.23755L4.81055 8.23755C4.74219 8.31592 4.66016 8.37964 4.56641 8.42456C4.47461 8.46948 4.37305 8.49487 4.26953 8.49878C4.16602 8.50269 4.0625 8.48535 3.9668 8.44751C3.87109 8.40991 3.7832 8.35254 3.71094 8.27954L0.210938 4.77954C0.0742188 4.63794 -0.00195312 4.44849 0 4.25171C0.00195312 4.05518 0.0800781 3.86719 0.220703 3.72803C0.359375 3.58911 0.546875 3.51025 0.744141 3.50879C0.941406 3.50708 1.13086 3.58276 1.27148 3.71948L4.19922 6.64648L9.67188 0.261475C9.80273 0.110596 9.98633 0.017334 10.1836 0.00219727C10.3828 -0.0129395 10.5781 0.0500488 10.7285 0.179443Z"
-                                        fill="#21A1CA" fill-opacity="1.000000" fill-rule="evenodd" />
-                                </svg>
-                            </span>
-                            <p class="checkbox__text">
-                                Я согласен с <a class="checkbox__text-link" href="#">политикой обработки персональных
-                                    данных</a>
-                            </p>
-                        </label>
+                        <div class="checbox-wrapper">
+                            <label class="callback__checkbox checkbox">
+                                <input type="checkbox" class="checkbox__input visually-hidden policy">
+                                <span class="checkbox__inner">
+                                    <svg width="10.990234" height="8.499268" viewBox="0 0 10.9902 8.49927" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <defs />
+                                        <path id="Vector"
+                                            d="M10.7285 0.179443C10.8047 0.243652 10.8652 0.321777 10.9102 0.409668C10.9551 0.497559 10.9824 0.593506 10.9883 0.69165C10.9961 0.789795 10.9844 0.888672 10.9531 0.982422C10.9238 1.07593 10.875 1.1626 10.8105 1.23755L4.81055 8.23755C4.74219 8.31592 4.66016 8.37964 4.56641 8.42456C4.47461 8.46948 4.37305 8.49487 4.26953 8.49878C4.16602 8.50269 4.0625 8.48535 3.9668 8.44751C3.87109 8.40991 3.7832 8.35254 3.71094 8.27954L0.210938 4.77954C0.0742188 4.63794 -0.00195312 4.44849 0 4.25171C0.00195312 4.05518 0.0800781 3.86719 0.220703 3.72803C0.359375 3.58911 0.546875 3.51025 0.744141 3.50879C0.941406 3.50708 1.13086 3.58276 1.27148 3.71948L4.19922 6.64648L9.67188 0.261475C9.80273 0.110596 9.98633 0.017334 10.1836 0.00219727C10.3828 -0.0129395 10.5781 0.0500488 10.7285 0.179443Z"
+                                            fill="#21A1CA" fill-opacity="1.000000" fill-rule="evenodd" />
+                                    </svg>
+                                </span>
+                                <p class="checkbox__text">
+                                    Я согласен с <a class="checkbox__text-link" href="#">политикой обработки
+                                        персональных
+                                        данных</a>
+                                </p>
+                            </label>
+                        </div>
                         <button type="submit" class="callback__form-btn form-btn btn">
                             <span class="btn__text">
                                 Позвоните мне
@@ -2582,6 +2594,113 @@
                             </span>
                         </button>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-target="add-review" class="form-popup popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <button class="popup__close close-popup">
+                    <svg width="32.000000" height="32.000000" viewBox="0 0 32 32" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs />
+                        <path id="Vector 110" d="M8 8L24 24" stroke="#21A1CA" stroke-opacity="1.000000"
+                            stroke-width="2.000000" />
+                        <path id="Vector 111" d="M24 8L8 24" stroke="#21A1CA" stroke-opacity="1.000000"
+                            stroke-width="2.000000" />
+                    </svg>
+                </button>
+                <div class="callback__wrapper">
+                    <div class="block-decor block-decor_left"></div>
+                    <div class="block-decor block-decor_right"></div>
+                    <div class="callback__content">
+                        <h2 class="callback__title">
+                            Оставьте свой отзыв
+                        </h2>
+                        <p class="callback__descr">
+                            Опишите опыт взаимодействия с метрологов в вашем регионе, расскажите что вам понравилось и что хотелось бы улучшить
+                        </p>
+                        <picture class="callback__picture">
+                            <img src="assets/img/sections/callback/review-preview.png" alt="" class="callback__img">
+                        </picture>
+                    </div>
+                    <form id="add-review" method="post" class="callback__form form form-to-telegramm" data-action="review">
+                        <div class="form-select-data">
+                            <select name="city" class="form-select select">
+                                <option value="Краснодар">Краснодар</option>
+                                <option value="Москва">Москва</option>
+                                <option value="Ростов-на-Дону">Ростов-на-Дону</option>
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <input type="text" name="name" placeholder="Введите имя" class="form-field__input name">
+                        </div>
+                        <div class="form-field">
+                            <input type="text" name="email" placeholder="Ваш e-mail"
+                                class="form-field__input mail">
+                        </div>
+                        <div class="form-field">
+                            <textarea name="message" placeholder="Напишите свое мнение здесь"
+                                class="form-field__input message"></textarea>
+                        </div>
+                        <div class="checbox-wrapper">
+                            <label class="callback__checkbox checkbox">
+                                <input type="checkbox" class="checkbox__input visually-hidden policy">
+                                <span class="checkbox__inner">
+                                    <svg width="10.990234" height="8.499268" viewBox="0 0 10.9902 8.49927" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <defs />
+                                        <path id="Vector"
+                                            d="M10.7285 0.179443C10.8047 0.243652 10.8652 0.321777 10.9102 0.409668C10.9551 0.497559 10.9824 0.593506 10.9883 0.69165C10.9961 0.789795 10.9844 0.888672 10.9531 0.982422C10.9238 1.07593 10.875 1.1626 10.8105 1.23755L4.81055 8.23755C4.74219 8.31592 4.66016 8.37964 4.56641 8.42456C4.47461 8.46948 4.37305 8.49487 4.26953 8.49878C4.16602 8.50269 4.0625 8.48535 3.9668 8.44751C3.87109 8.40991 3.7832 8.35254 3.71094 8.27954L0.210938 4.77954C0.0742188 4.63794 -0.00195312 4.44849 0 4.25171C0.00195312 4.05518 0.0800781 3.86719 0.220703 3.72803C0.359375 3.58911 0.546875 3.51025 0.744141 3.50879C0.941406 3.50708 1.13086 3.58276 1.27148 3.71948L4.19922 6.64648L9.67188 0.261475C9.80273 0.110596 9.98633 0.017334 10.1836 0.00219727C10.3828 -0.0129395 10.5781 0.0500488 10.7285 0.179443Z"
+                                            fill="#21A1CA" fill-opacity="1.000000" fill-rule="evenodd" />
+                                    </svg>
+                                </span>
+                                <p class="checkbox__text">
+                                    Я согласен с <a class="checkbox__text-link" href="#">политикой обработки
+                                        персональных
+                                        данных</a>
+                                </p>
+                            </label>
+                        </div>
+                        <button type="submit" class="callback__form-btn form-btn btn">
+                            <span class="btn__text">
+                                Позвоните мне
+                            </span>
+                            <span class="btn__icon">
+                                <img src="assets/img/icons/btn-check.svg" alt="">
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="popup-btn visually-hidden" data-path="response"></button>
+    <div data-target="response" class="response-popup popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <button class="popup__close close-popup">
+                    <svg width="32.000000" height="32.000000" viewBox="0 0 32 32" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs />
+                        <path id="Vector 110" d="M8 8L24 24" stroke="#21A1CA" stroke-opacity="1.000000"
+                            stroke-width="2.000000" />
+                        <path id="Vector 111" d="M24 8L8 24" stroke="#21A1CA" stroke-opacity="1.000000"
+                            stroke-width="2.000000" />
+                    </svg>
+                </button>
+                <div class="callback__wrapper">
+                    <div class="block-decor block-decor_left"></div>
+                    <div class="block-decor block-decor_right"></div>
+                    <div class="response-popup__content">
+                        <p class="response-popup__title"></p>
+                        <p class="response-popup__descr"></p>
+                        <img src="" alt="" class="response-popup__img" aria-label="presentation">
+                        <button class="response-popup__close close-popup">
+                            Закрыть
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
