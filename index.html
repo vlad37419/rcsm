@@ -19,12 +19,13 @@
     <script defer src="assets/js/build/mask.js"></script>
     <script defer src="assets/js/build/choices.js"></script>
     <script defer src="assets/js/build/aos.js"></script>
+    <script defer src="assets/js/build/just-validate.js"></script>
     <script defer src="assets/js/main.js"></script>
     <title>Главная</title>
 </head>
 
 <body>
-    <header class="header">
+    <header class="header padding-lock">
         <div class="header__container container">
             <div class="header__wrapper">
                 <div class="header__menu-action">
@@ -43,9 +44,9 @@
                         Санкт-петербург
                     </button>
                 </div>
-                <a href="tel:89186593344" class="header__phone-mobile">
+                <button class="header__phone-mobile popup-btn" data-path="form">
                     <img src="assets/img/icons/mobile-phone.svg" alt="" class="header__phone-mobile-icon">
-                </a>
+                </button>
                 <div class="header__dropdown">
                     <nav class="header__menu menu">
                         <ul class="menu__list">
@@ -57,11 +58,27 @@
                         </ul>
                     </nav>
                     <div class="header__connection connection">
-                        <a href="tel:89186593344" class="connection__phone connection-phone">
-                            <span class="connection-phone__text">
-                                8 918 659-33-44
-                            </span>
-                        </a>
+                        <div class="connection__phone-wrapper">
+                            <button class="connection__phone connection-phone popup-btn" data-path="form">
+                                <span class="connection-phone__text">
+                                    8 918 659-33-44
+                                </span>
+                                <span class="connection-phone__icon">
+                                    <svg width="18.000000" height="18.000000" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <defs />
+                                        <path id="Vector"
+                                            d="M14.3809 7.78998C12.9395 10.62 10.6191 12.93 7.78906 14.38L5.58984 12.18C5.32031 11.91 4.91992 11.82 4.57031 11.94C3.44922 12.31 2.24023 12.51 1 12.51C0.449219 12.51 0 12.96 0 13.51L0 17C0 17.55 0.449219 18 1 18C10.3906 18 18 10.39 18 1C18 0.450012 17.5508 0 17 0L13.5 0C12.9492 0 12.5 0.450012 12.5 1C12.5 2.25 12.3008 3.45001 11.9297 4.57001C11.8203 4.91998 11.9004 5.31 12.1797 5.59003L14.3809 7.78998Z"
+                                            fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero" />
+                                    </svg>
+                                </span>
+                            </button>
+                            <button class="connection__phone-show">
+                                <p class="connection__phone-show-text">
+                                    Показать
+                                </p>
+                            </button>
+                        </div>
                         <ul class="connection__socials socials">
                             <li class="socials__item social">
                                 <a href="#" target="_blank" class="social__link">
@@ -409,7 +426,7 @@
                                         Процесс поверки кратко
                                     </p>
                                     <p class="video__preview-time">
-                                        Смотреть 30 сек
+                                        Смотреть 120 сек
                                     </p>
                                 </div>
                             </div>
@@ -1717,7 +1734,7 @@
                 </div>
             </div>
         </section>
-        <section class="map section-offset">
+        <!-- <section class="map section-offset">
             <div class="map__container container-1280">
                 <div class="map__inner">
                     <div class="map__top section-top">
@@ -1779,7 +1796,7 @@
                         город</button>
                 </div>
             </div>
-        </section>
+        </section> -->
         <section class="documents" data-aos="fade-up" data-aos-duration="600">
             <div class="documents__container container-1280">
                 <div class="documents__top section-top">
@@ -2000,9 +2017,29 @@
                                             Контактный телефон:
                                         </p>
                                     </div>
-                                    <a href="tel:89186593343" class="data-select__text data-select__text_decor">
-                                        8 918 659 33 43
-                                    </a>
+                                    <div class="connection__phone-wrapper">
+                                        <button type="button" class="connection__phone connection-phone popup-btn"
+                                            data-path="form">
+                                            <span class="connection-phone__text">
+                                                8 918 659-33-44
+                                            </span>
+                                            <span class="connection-phone__icon">
+                                                <svg width="18.000000" height="18.000000" viewBox="0 0 18 18"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                    <defs />
+                                                    <path id="Vector"
+                                                        d="M14.3809 7.78998C12.9395 10.62 10.6191 12.93 7.78906 14.38L5.58984 12.18C5.32031 11.91 4.91992 11.82 4.57031 11.94C3.44922 12.31 2.24023 12.51 1 12.51C0.449219 12.51 0 12.96 0 13.51L0 17C0 17.55 0.449219 18 1 18C10.3906 18 18 10.39 18 1C18 0.450012 17.5508 0 17 0L13.5 0C12.9492 0 12.5 0.450012 12.5 1C12.5 2.25 12.3008 3.45001 11.9297 4.57001C11.8203 4.91998 11.9004 5.31 12.1797 5.59003L14.3809 7.78998Z"
+                                                        fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero" />
+                                                </svg>
+                                            </span>
+                                        </button>
+                                        <button type="button" class="connection__phone-show">
+                                            <p class="connection__phone-show-text">
+                                                Показать
+                                            </p>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -2040,7 +2077,7 @@
                         </label>
                         <button type="submit" class="callback__form-btn form-btn btn">
                             <span class="btn__text">
-                                Оставить заявку
+                                Позвоните мне
                             </span>
                             <span class="btn__icon">
                                 <img src="assets/img/icons/btn-check.svg" alt="">
@@ -2275,11 +2312,28 @@
                             <p class="contacts__phone-text">
                                 Нажмите, чтобы позвонить. Ответим на все ваши вопросы в рабочее время.
                             </p>
-                            <a href="tel:89186593344" class="contacts__phone-link connection-phone">
-                                <span class="connection-phone__text">
-                                    8 918 659-33-44
-                                </span>
-                            </a>
+                            <div class="connection__phone-wrapper">
+                                <button class="connection__phone connection-phone popup-btn" data-path="form">
+                                    <span class="connection-phone__text">
+                                        8 918 659-33-44
+                                    </span>
+                                    <span class="connection-phone__icon">
+                                        <svg width="18.000000" height="18.000000" viewBox="0 0 18 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            <defs />
+                                            <path id="Vector"
+                                                d="M14.3809 7.78998C12.9395 10.62 10.6191 12.93 7.78906 14.38L5.58984 12.18C5.32031 11.91 4.91992 11.82 4.57031 11.94C3.44922 12.31 2.24023 12.51 1 12.51C0.449219 12.51 0 12.96 0 13.51L0 17C0 17.55 0.449219 18 1 18C10.3906 18 18 10.39 18 1C18 0.450012 17.5508 0 17 0L13.5 0C12.9492 0 12.5 0.450012 12.5 1C12.5 2.25 12.3008 3.45001 11.9297 4.57001C11.8203 4.91998 11.9004 5.31 12.1797 5.59003L14.3809 7.78998Z"
+                                                fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero" />
+                                        </svg>
+                                    </span>
+                                </button>
+                                <button class="connection__phone-show">
+                                    <p class="connection__phone-show-text">
+                                        Показать
+                                    </p>
+                                </button>
+                            </div>
                         </div>
                         <ul class="contacts__info-socials contacts-socials">
                             <li class="contacts-socials__item contacts-social contacts-social_tg">
@@ -2340,11 +2394,27 @@
                     </button>
                 </div>
                 <div class="connection">
-                    <a href="tel:89186593344" class="connection__phone connection-phone">
-                        <span class="connection-phone__text">
-                            8 918 659-33-44
-                        </span>
-                    </a>
+                    <div class="connection__phone-wrapper">
+                        <button class="connection__phone connection-phone popup-btn" data-path="form">
+                            <span class="connection-phone__text">
+                                8 918 659-33-44
+                            </span>
+                            <span class="connection-phone__icon">
+                                <svg width="18.000000" height="18.000000" viewBox="0 0 18 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <defs />
+                                    <path id="Vector"
+                                        d="M14.3809 7.78998C12.9395 10.62 10.6191 12.93 7.78906 14.38L5.58984 12.18C5.32031 11.91 4.91992 11.82 4.57031 11.94C3.44922 12.31 2.24023 12.51 1 12.51C0.449219 12.51 0 12.96 0 13.51L0 17C0 17.55 0.449219 18 1 18C10.3906 18 18 10.39 18 1C18 0.450012 17.5508 0 17 0L13.5 0C12.9492 0 12.5 0.450012 12.5 1C12.5 2.25 12.3008 3.45001 11.9297 4.57001C11.8203 4.91998 11.9004 5.31 12.1797 5.59003L14.3809 7.78998Z"
+                                        fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero" />
+                                </svg>
+                            </span>
+                        </button>
+                        <button class="connection__phone-show">
+                            <p class="connection__phone-show-text">
+                                Показать
+                            </p>
+                        </button>
+                    </div>
                     <ul class="connection__socials socials">
                         <li class="socials__item social">
                             <a href="#" target="_blank" class="social__link">
@@ -2424,6 +2494,98 @@
             </div>
         </div>
     </footer>
+    <div data-target="form" class="form-popup popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <button class="popup__close close-popup">
+                    <svg width="32.000000" height="32.000000" viewBox="0 0 32 32" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs />
+                        <path id="Vector 110" d="M8 8L24 24" stroke="#21A1CA" stroke-opacity="1.000000"
+                            stroke-width="2.000000" />
+                        <path id="Vector 111" d="M24 8L8 24" stroke="#21A1CA" stroke-opacity="1.000000"
+                            stroke-width="2.000000" />
+                    </svg>
+                </button>
+                <div class="callback__wrapper">
+                    <div class="block-decor block-decor_left"></div>
+                    <div class="block-decor block-decor_right"></div>
+                    <div class="callback__content">
+                        <h2 class="callback__title">
+                            Ответим на все вопросы
+                        </h2>
+                        <p class="callback__descr">
+                            Получите консультацию по всем вопросам или запишитесь на получение услуги в удобную для вас
+                            дату и время
+                        </p>
+                        <picture class="callback__picture">
+                            <img src="assets/img/sections/callback/popup-preview.png" alt="" class="callback__img">
+                        </picture>
+                    </div>
+                    <form id="callback-popup" method="post" class="callback__form form form-to-telegramm">
+                        <div class="form-select-data">
+                            <select name="city" class="form-select select">
+                                <option value="Краснодар">Краснодар</option>
+                                <option value="Москва">Москва</option>
+                                <option value="Ростов-на-Дону">Ростов-на-Дону</option>
+                            </select>
+                        </div>
+                        <div class="form-select-data active">
+                            <p class="form-field__title">
+                                Район:
+                            </p>
+                            <select name="district" class="form-select select">
+                                <option value="Западный">Западный</option>
+                                <option value="Северный">Северный</option>
+                                <option value="Ворошиловский">Ворошиловский</option>
+                                <option value="Чкаловский">Чкаловский</option>
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <p class="form-field__title">
+                                Ваше имя:
+                            </p>
+                            <input type="text" name="name" placeholder="Введите имя" class="form-field__input name">
+                        </div>
+                        <div class="form-field">
+                            <p class="form-field__title">
+                                Ваш номер телефона:
+                            </p>
+                            <input type="tel" name="phone" placeholder="+7 (___) ___ - __ - __"
+                                class="form-field__input phone">
+                        </div>
+                        <div class="checbox-wrapper">
+                            <label class="callback__checkbox checkbox">
+                                <input type="checkbox" class="checkbox__input visually-hidden policy">
+                                <span class="checkbox__inner">
+                                    <svg width="10.990234" height="8.499268" viewBox="0 0 10.9902 8.49927" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <defs />
+                                        <path id="Vector"
+                                            d="M10.7285 0.179443C10.8047 0.243652 10.8652 0.321777 10.9102 0.409668C10.9551 0.497559 10.9824 0.593506 10.9883 0.69165C10.9961 0.789795 10.9844 0.888672 10.9531 0.982422C10.9238 1.07593 10.875 1.1626 10.8105 1.23755L4.81055 8.23755C4.74219 8.31592 4.66016 8.37964 4.56641 8.42456C4.47461 8.46948 4.37305 8.49487 4.26953 8.49878C4.16602 8.50269 4.0625 8.48535 3.9668 8.44751C3.87109 8.40991 3.7832 8.35254 3.71094 8.27954L0.210938 4.77954C0.0742188 4.63794 -0.00195312 4.44849 0 4.25171C0.00195312 4.05518 0.0800781 3.86719 0.220703 3.72803C0.359375 3.58911 0.546875 3.51025 0.744141 3.50879C0.941406 3.50708 1.13086 3.58276 1.27148 3.71948L4.19922 6.64648L9.67188 0.261475C9.80273 0.110596 9.98633 0.017334 10.1836 0.00219727C10.3828 -0.0129395 10.5781 0.0500488 10.7285 0.179443Z"
+                                            fill="#21A1CA" fill-opacity="1.000000" fill-rule="evenodd" />
+                                    </svg>
+                                </span>
+                                <p class="checkbox__text">
+                                    Я согласен с <a class="checkbox__text-link" href="#">политикой обработки
+                                        персональных
+                                        данных</a>
+                                </p>
+                            </label>
+                        </div>
+                        <button type="submit" class="callback__form-btn form-btn btn">
+                            <span class="btn__text">
+                                Позвоните мне
+                            </span>
+                            <span class="btn__icon">
+                                <img src="assets/img/icons/btn-check.svg" alt="">
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

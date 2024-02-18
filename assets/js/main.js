@@ -1,12 +1,17 @@
-function initPhoneMask() {
-    const phoneFields = document.querySelectorAll('input[type="tel"]');
-    const maskOptions = {
-        mask: '+{7} (000) 000 00-00'
-    };
+function setWidthScrollBar() {
+    let div = document.createElement('div');
 
-    phoneFields.forEach((phoneField) => {
-        IMask(phoneField, maskOptions);
-    });
+    div.style.position = 'absolute';
+    div.style.overflowY = 'scroll';
+    div.style.width = '50px';
+    div.style.height = '50px';
+
+    document.body.append(div);
+    let scrollWidth = div.offsetWidth - div.clientWidth;
+
+    div.remove();
+
+    return scrollWidth;
 }
 
 function menuOpen(menuSelector) {
@@ -274,14 +279,180 @@ document.addEventListener('DOMContentLoaded', function () {
         videoList.forEach((video) => {
             const videoItem = video.querySelector('.video__item');
             const videoPlay = video.querySelector('.video__preview');
-            videoPlay.addEventListener('click', function() {
+            const videoTime = video.querySelector('.video__preview-time');
+            videoPlay.addEventListener('click', function () {
                 video.classList.add('active');
                 videoItem.play();
             });
         });
     }
 
-    initPhoneMask();
+    // connection-phone
+    const connectionPhoneShowList = document.querySelectorAll('.connection__phone-show');
+
+    if (connectionPhoneShowList.length > 0) {
+        connectionPhoneShowList.forEach((connectionPhoneShow) => {
+            connectionPhoneShow.addEventListener('click', function () {
+                connectionPhoneShow.classList.add('hide');
+            });
+        })
+    }
+
+    // inputmask for tel
+    let telSelector = document.querySelectorAll("input[type='tel']");
+    let im = new Inputmask("+7 (999) 999-99-99");
+    telSelector.forEach(elem => im.mask(elem));
+
+    // Popups
+    function popupClose(popupActive) {
+        popupActive.querySelector('.form').dataset.additional = "Неизвестная форма";
+        popupActive.classList.remove('open');
+        document.body.classList.remove('lock');
+        document.querySelector('html').style.paddingRight = 0;
+        document.querySelectorAll('.padding-lock').forEach(function (elem) {
+            if (window.getComputedStyle(elem).position == 'fixed' || window.getComputedStyle(elem).position == 'absolute') {
+                elem.style.paddingRight = 0;
+            }
+        });
+    }
+
+    const popupOpenBtns = document.querySelectorAll('.popup-btn');
+    const popups = document.querySelectorAll('.popup');
+    const closePopupBtns = document.querySelectorAll('.close-popup');
+
+    closePopupBtns.forEach(function (el) {
+        el.addEventListener('click', function (e) {
+            popupClose(e.target.closest('.popup'));
+        });
+    });
+
+    popupOpenBtns.forEach(function (el) {
+        el.addEventListener('click', function (e) {
+            const path = e.currentTarget.dataset.path;
+            const currentPopup = document.querySelector(`[data-target="${path}"]`);
+            const currentForm = currentPopup.querySelector('.form');
+            const additional = el.dataset.additional || "Неизвестная форма";
+
+            popups.forEach(function (popup) {
+                popupClose(popup);
+                popup.addEventListener('click', function (e) {
+                    if (!e.target.closest('.popup__content')) {
+                        popupClose(e.target.closest('.popup'));
+                    }
+                });
+            });
+
+            menuClose(header);
+
+            currentForm.dataset.additional = additional;
+            currentPopup.classList.add('open');
+            document.body.classList.add('lock');
+            document.querySelector('html').style.paddingRight = setWidthScrollBar() + 'px';
+            document.querySelectorAll('.padding-lock').forEach(function (elem) {
+                if (window.getComputedStyle(elem).position == 'fixed' || window.getComputedStyle(elem).position == 'absolute') {
+                    elem.style.paddingRight = setWidthScrollBar() + 'px';
+                }
+            });
+        });
+    });
+
+    // send message to telegramm
+    const forms = document.querySelectorAll('.form-to-telegramm');
+
+    for (let i = 0; i < forms.length; i += 1) {
+        const currentForm = forms[i];
+        const currentFormId = currentForm.id;
+
+        // validator for form
+        const validation = new JustValidate(`#${currentFormId}`);
+
+        validation
+            .addField('.name', [
+                {
+                    rule: 'required',
+                    errorMessage: 'Вы не ввели имя',
+                },
+                {
+                    rule: 'minLength',
+                    value: 2,
+                    errorMessage: 'Минимум 2 символа',
+                },
+                {
+                    rule: 'customRegexp',
+                    value: /^[а-яА-Яa-zA-Z]+$/,
+                    errorMessage: 'Недопустимый формат',
+                },
+            ])
+            .addField('.phone', [
+                {
+                    rule: 'required',
+                    errorMessage: 'Вы не ввели телефон',
+                },
+                {
+                    validator: () => {
+                        const currentInputPhone = currentForm.querySelector('.phone');
+                        const phone = currentInputPhone.inputmask.unmaskedvalue();
+                        return phone.length === 10;
+                    },
+                    errorMessage: 'Введите номер телефона полностью',
+                },
+            ])
+            .addField('.policy', [
+                {
+                    rule: 'required',
+                    errorMessage: 'Это обязательное поле',
+                },
+            ])
+            .onSuccess((event) => {
+                const successMessage = document.createElement('p');
+                successMessage.classList.add('form__success-message');
+                successMessage.textContent = 'Форма отправлена, скоро вам позвонят!';
+                console.log(currentForm);
+                currentForm.append(successMessage);
+            });
+
+        currentForm.addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            if (validation.isValid) {
+                let data = {};
+                let fieldsResult = {};
+                let fields = Object.values(currentForm).reduce((obj, field) => {
+                    obj[field.name] = field.value;
+                    return obj
+                }, {});
+
+                for (let key in fields) {
+                    if (key && key !== 'undefined') {
+                        fieldsResult[key] = {
+                            NAME: key,
+                            VALUE: fields[key]
+                        }
+                    }
+                }
+
+                data.FIELDS = fieldsResult;
+
+                console.log(data);
+
+                fetch("fetch/send.php", {
+                    body: JSON.stringify({
+                        action: 'send',
+                        "DATA": data,
+                        "ADDITIONAL": currentForm.dataset.additional,
+                    }),
+                    headers: {
+                        'Content-type': 'application/json',
+                    },
+                    method: "POST"
+                }).then(async (resp) => {
+                    console.log('test');
+                    console.log(await resp.json());
+                });
+            }
+        });
+    }
+
     AOS.init({
         once: true,
     });
