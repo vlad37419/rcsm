@@ -2563,7 +2563,7 @@ textarea.form-field__input {
     min-height: 562px;
     background-image: url('../img/sections/directions/map.png');
     background-repeat: no-repeat;
-    background-position: left center;
+    background-position: left bottom;
 }
 
 .directions__descr-text {
