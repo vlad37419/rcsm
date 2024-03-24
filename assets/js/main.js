@@ -40,6 +40,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     crossFade: true
                 },
                 loop: true,
+                // autoplay: {
+                //     delay: 5000,
+                // },
                 on: {
                     slideChange: function () {
                         setTimeout(() => {
@@ -67,6 +70,12 @@ document.addEventListener('DOMContentLoaded', function () {
                         nextEl: serviceThumb.closest('.slider-wrapper').querySelector('.slider-btn_next'),
                     },
                 });
+
+                console.log(serviceThumbSlider);
+                if (serviceThumbSlider.slides.length <= 1) {
+                    serviceThumb.closest('.service__thumbs-wrapper').remove();
+                    slider.classList.add('active');
+                }
             }
 
             const serviceSlider = new Swiper(slider, {
@@ -484,6 +493,60 @@ document.addEventListener('DOMContentLoaded', function () {
                     const popupResponseBtn = document.querySelector('[data-path="response"]');
                     popupResponseBtn.click();
                 });
+            }
+        });
+    }
+
+    // directions pins
+    const directionPin = document.querySelectorAll('.directions__pin');
+
+    if (directionPin.length > 0) {
+        directionPin.forEach((elem) => {
+            const wrapper = elem.querySelector('.directions__pin-wrapper');
+            const icon = elem.querySelector('.directions__pin-wrapper .directions__pin-icon');
+            const content = elem.querySelector('.directions__pin-text');
+            elem.addEventListener('click', () => {
+                if (!elem.classList.contains('show')) {
+                    directionPin.forEach(el => {
+                        if (el != this) {
+                            el.querySelector('.directions__pin-wrapper').removeAttribute('style');
+                            el.classList.remove('show');
+                        }
+                    });
+                    elem.classList.add('show');
+                    if (content.clientHeight > icon.clientHeight) {
+                        wrapper.style.height = content.clientHeight + 12 + 'px';
+                    } else {
+                        wrapper.style.height = icon.clientHeight + 12 + 'px';
+                    }
+                    wrapper.style.width = icon.clientWidth + content.clientWidth + 24 + 'px';
+                } else {
+                    elem.classList.remove('show');
+                    wrapper.removeAttribute('style');
+                }
+            });
+            window.addEventListener('click', function (e) {
+                const target = e.target;
+                if (!target.closest('.directions__pin')) {
+                    elem.classList.remove('show');
+                    wrapper.removeAttribute('style');
+                }
+            });
+        })
+    }
+
+    // directions full city
+    const directionsMapBtn = document.querySelector('.directions__map-btn');
+    const directionsMap = document.querySelector('.directions__map');
+
+    if (directionsMapBtn) {
+        directionsMapBtn.addEventListener('click', function () {
+            if (directionsMap.classList.contains('active')) {
+                directionsMap.classList.remove('active');
+                directionsMapBtn.textContent = 'Смотреть все города - партнеры';
+            } else {
+                directionsMap.classList.add('active');
+                directionsMapBtn.textContent = 'Скрыть';
             }
         });
     }
