@@ -410,6 +410,10 @@ main {
     margin-bottom: 20px;
 }
 
+.form-select-data:last-child {
+    margin-bottom: 0;
+}
+
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -552,7 +556,6 @@ textarea.form-field__input {
 
 .choices {
     margin-bottom: 0;
-    z-index: 15;
 }
 
 .choices__inner {
@@ -593,8 +596,9 @@ textarea.form-field__input {
     line-height: 140%;
 }
 
-.choices__list {
+.choices .choices__list {
     padding: 0;
+    z-index: 15;
 }
 
 .choices[data-type*=select-one]::after {
@@ -862,6 +866,51 @@ textarea.form-field__input {
     line-height: 140%;
     color: rgb(0, 58, 103);
     min-width: 240px;
+}
+
+.region-popup {
+    pointer-events: none;
+}
+
+.region-popup .popup__content {
+    padding: 48px;
+    pointer-events: all;
+}
+
+.region-popup__title {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 58px;
+    color: #003A67;
+    margin-bottom: 16px;
+}
+
+.region-popup__descr {
+    font-size: 16px;
+    line-height: 23px;
+    color: #003A67;
+}
+
+.region-popup__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.region-popup__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.region-popup__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.region-popup__btn {
+    min-height: 48px;
 }
 
 /* header */
