@@ -406,6 +406,7 @@ main {
 }
 
 .form-select-data {
+    position: relative;
     border-radius: 4px;
     margin-bottom: 20px;
 }
@@ -569,6 +570,7 @@ textarea.form-field__input {
 
 .form-select-data.active .choices__inner {
     border: 1px solid rgb(0, 58, 103) !important;
+    transition: border-color .2s ease;
 }
 
 .form-select-data.active .choices.is-open .choices__inner {

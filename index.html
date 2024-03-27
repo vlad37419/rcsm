@@ -40,7 +40,7 @@
                     <a href="/" class="header__logo logo">
                         <img src="assets/img/logo.svg" alt="" class="logo__img">
                     </a>
-                    <button class="header__city">
+                    <button class="header__city city">
                         Санкт-петербург
                     </button>
                 </div>
@@ -61,7 +61,7 @@
                         <div class="connection__phone-wrapper">
                             <button class="connection__phone connection-phone popup-btn" data-path="form"
                                 data-additional="Форма в попапе, после нажатия на номер в шапке">
-                                <span class="connection-phone__text">
+                                <span class="connection-phone__text phone-js">
                                     8 918 659-33-44
                                 </span>
                                 <span class="connection-phone__icon">
@@ -80,18 +80,7 @@
                                 </p>
                             </button>
                         </div>
-                        <ul class="connection__socials socials">
-                            <li class="socials__item social">
-                                <a href="#" target="_blank" class="social__link">
-                                    <img src="assets/img/icons/socials/tg.svg" alt="" class="social__img">
-                                </a>
-                            </li>
-                            <li class="socials__item social">
-                                <a href="#" target="_blank" class="social__link">
-                                    <img src="assets/img/icons/socials/wa.svg" alt="" class="social__img">
-                                </a>
-                            </li>
-                        </ul>
+                        <ul class="connection__socials socials"></ul>
                     </div>
                     <button class="header__dropdown-close-menu close-menu">
                         Закрыть меню
@@ -723,7 +712,7 @@
                         </div>
                         <div class="about__content content-body">
                             <p>
-                                Компания РЦСМ Краснодар совместно с *Юр лицо* успешно ведет свою деятельность более 5
+                                Компания РЦСМ <span class="city">Краснодар</span> совместно с <span class="contact-js"></span> успешно ведет свою деятельность более 5
                                 лет в сфере оказания услуг по поверке счетчиков горячей и холодной воды.
                             </p>
                             <p>
@@ -733,7 +722,7 @@
                             </p>
                             <p>
                                 Оставьте заявку на услугу поверки счетчика горячей воды или холодной воды в городе
-                                Краснодар и получите качественно оказанную услугу, спокойствие и существенную экономию
+                                <span class="city">Краснодар</span> и получите качественно оказанную услугу, спокойствие и существенную экономию
                                 на коммунальных платежах.
                             </p>
                             <div class="about__content-gallery">
@@ -1227,7 +1216,7 @@
                                             Ответственный в вашем городе:
                                         </p>
                                     </div>
-                                    <p class="data-select__text">
+                                    <p class="data-select__text responsible">
                                         Владимир О.В.
                                     </p>
                                 </div>
@@ -1241,7 +1230,7 @@
                                     <div class="connection__phone-wrapper">
                                         <button type="button" class="connection__phone connection-phone popup-btn"
                                             data-path="form">
-                                            <span class="connection-phone__text">
+                                            <span class="connection-phone__text phone-js">
                                                 8 918 659-33-44
                                             </span>
                                             <span class="connection-phone__icon">
@@ -1269,11 +1258,7 @@
                                 Район:
                             </p>
                             <select name="district" class="form-select select">
-                                <option value="Район не выбран">Выберите район</option>
-                                <option value="Западный">Западный</option>
-                                <option value="Северный">Северный</option>
-                                <option value="Ворошиловский">Ворошиловский</option>
-                                <option value="Чкаловский">Чкаловский</option>
+                                <option value="no">Выберите район</option>
                             </select>
                         </div>
                         <div class="form-field">
@@ -1531,7 +1516,7 @@
                             </p>
                             <div class="connection__phone-wrapper">
                                 <button class="connection__phone connection-phone popup-btn" data-path="form">
-                                    <span class="connection-phone__text">
+                                    <span class="connection-phone__text phone-js">
                                         8 918 659-33-44
                                     </span>
                                     <span class="connection-phone__icon">
@@ -1609,14 +1594,14 @@
                     <a href="/" class="header__logo logo">
                         <img src="assets/img/logo.svg" alt="" class="logo__img">
                     </a>
-                    <button class="header__city">
+                    <button class="header__city city">
                         Санкт-петербург
                     </button>
                 </div>
                 <div class="connection">
                     <div class="connection__phone-wrapper">
                         <button class="connection__phone connection-phone popup-btn" data-path="form">
-                            <span class="connection-phone__text">
+                            <span class="connection-phone__text phone-js">
                                 8 918 659-33-44
                             </span>
                             <span class="connection-phone__icon">
@@ -1635,18 +1620,7 @@
                             </p>
                         </button>
                     </div>
-                    <ul class="connection__socials socials">
-                        <li class="socials__item social">
-                            <a href="#" target="_blank" class="social__link">
-                                <img src="assets/img/icons/socials/tg.svg" alt="" class="social__img">
-                            </a>
-                        </li>
-                        <li class="socials__item social">
-                            <a href="#" target="_blank" class="social__link">
-                                <img src="assets/img/icons/socials/wa.svg" alt="" class="social__img">
-                            </a>
-                        </li>
-                    </ul>
+                    <ul class="connection__socials socials"></ul>
                 </div>
             </div>
         </div>
@@ -1680,22 +1654,12 @@
                     </li>
                 </ul>
                 <div class="footer__info">
-                    <div class="footer__requisites requisites">
-                        <p class="requisites__text">
-                            ООО КАКОЕ_ТО ЮР ЛИЦО
-                        </p>
-                        <p class="requisites__text">
-                            ИНН 0000000000000
-                        </p>
-                        <p class="requisites__text">
-                            Свидетельство №000000000000
-                        </p>
-                    </div>
+                    <div class="footer__requisites requisites"></div>
                     <div class="footer__info-links">
-                        <a href="tel:88000000000" class="footer__info-link hover-opacity-05">
+                        <a href="tel:88000000000" class="footer__info-link hover-opacity-05 phone-js">
                             8 800 000 00 00
                         </a>
-                        <a href="mailto:Mail.info@mail.com" class="footer__info-link hover-opacity-05">
+                        <a href="mailto:Mail.info@mail.com" class="footer__info-link hover-opacity-05 mail-js">
                             Mail.info@mail.com
                         </a>
                     </div>
@@ -1755,11 +1719,7 @@
                                 Район:
                             </p>
                             <select name="district" class="form-select select">
-                                <option value="Район не выбран">Выберите район</option>
-                                <option value="Западный">Западный</option>
-                                <option value="Северный">Северный</option>
-                                <option value="Ворошиловский">Ворошиловский</option>
-                                <option value="Чкаловский">Чкаловский</option>
+                                <option value="no">Выберите район</option>
                             </select>
                         </div>
                         <div class="form-field">
@@ -1946,16 +1906,12 @@
                                 Район:
                             </p>
                             <select name="district" class="form-select select">
-                                <option value="Район не выбран">Выберите район</option>
-                                <option value="Западный">Западный</option>
-                                <option value="Северный">Северный</option>
-                                <option value="Ворошиловский">Ворошиловский</option>
-                                <option value="Чкаловский">Чкаловский</option>
+                                <option value="no">Выберите район</option>
                             </select>
                         </div>
                         <button type="submit" class="region-popup__btn form-btn btn">
                             <span class="btn__text">
-                                Позвоните мне
+                                Продолжить
                             </span>
                             <span class="btn__icon">
                                 <img src="assets/img/icons/btn-check.svg" alt="">
